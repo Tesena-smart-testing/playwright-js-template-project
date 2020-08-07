@@ -4,11 +4,11 @@
   "description": "Set of functional/e2e tests using MS Playwright library, to explore its possibilities.",
   "main": "index.js",
   "scripts": {
-    "test": "\"\""
+    "test": "node_modules\\.bin\\mocha test\\spec\\** --config .mocharc.json"
   },
   "repository": {
     "type": "git",
-    "url": "\"\""
+    "url": "https://github.com/Tesena-smart-testing/playwright-js-template-project.git"
   },
   "keywords": [
     "testing",
