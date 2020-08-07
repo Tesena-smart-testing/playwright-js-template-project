@@ -1,0 +1,29 @@
+{
+  "name": "playwright-playground",
+  "version": "1.0.0",
+  "description": "Set of functional/e2e tests using MS Playwright library, to explore its possibilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"\""
+  },
+  "keywords": [
+    "testing",
+    "playwright",
+    "automation",
+    "nodejs"
+  ],
+  "author": "Radek 'bednaJedna' Bednarik | Tesena",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.6.0",
+    "mocha": "^8.1.1",
+    "mochawesome": "^6.1.1",
+    "playwright": "^1.3.0"
+  }
+}
