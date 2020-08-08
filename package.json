@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
+    "documentation": "^13.0.2",
     "eslint": "^7.6.0",
     "mocha": "^8.1.1",
     "mochawesome": "^6.1.1",

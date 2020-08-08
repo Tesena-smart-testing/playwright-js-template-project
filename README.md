@@ -8,6 +8,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
+- [Codebase Documentation](docs/codebase.md)
 
 ## About <a name = "about"></a>
 
@@ -15,14 +16,13 @@ Project to experiment with [Microsoft Playwright](https://github.com/microsoft/p
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 What things you need to install the software and how to install them.
 
 - [Node.js](https://nodejs.org/en/)
-
 
 ### Installing
 
@@ -45,10 +45,9 @@ npm update
 
 - do not push to the master - I will revert it, no questions asked
 - until CI pipeline with linting and formatting is setup, use on your development local:
-  
+
   - [eslint](https://github.com/eslint/eslint) - to check, catch and remove errors, bugs. Has plugin in VScode
   - [prettier](https://github.com/prettier/prettier) - to keep code formatting consistent. Has plugin in VScode.
-
 
 ## Usage <a name = "usage"></a>
 
