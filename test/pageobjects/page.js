@@ -101,6 +101,17 @@ module.exports.default = class Page {
   }
 
   /**
+   * Checks, whether element specified style color is present in the element style attribute value
+   * @param {object} element elementHandle object returned from page
+   * @param {string} color color code to check, if present in the element style attribute value
+   * @returns {boolean} true, if color code is present, else false
+   */
+  async verifyElementStyleColor(element, color) {
+    const attr = await element.getAttribute("style");
+    return attr.includes(color) ? true : false;
+  }
+
+  /**
    * Returns dataLayer from page context. Basically runs javascript code in the browser
    * and result (if any) is passed back to node runtime.
    * @method
