@@ -4,7 +4,9 @@
   "description": "Set of functional/e2e tests using MS Playwright library, to explore its possibilities.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\mocha test\\spec\\** --config .mocharc.json"
+    "test": "mocha test\\spec\\** --config .mocharc.json",
+    "docs-pop": "documentation build test\\pageobjects\\** -f md -o docs\\pageobjects.md",
+    "docs-spec": "documentation build test\\spec\\** -f md -o docs\\spec.md"
   },
   "repository": {
     "type": "git",

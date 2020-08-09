@@ -1,26 +1,49 @@
-/**
- * Tests to be run on Homepage of english mutation tesena site.
- * Tests are run on all browsers.
- */
-
 const Homepage = require("../pageobjects/homepage.page");
 const expect = require("chai").expect;
 
 Homepage.browsers.forEach(function (browser) {
+  /**
+   * Test suite for Homepage.
+   * Parametrized for all supported browsers.
+   * @function HomepageTests
+   */
   describe(`${browser}: Homepage tests`, function () {
+    /**
+     * before hook - everything needed to set things up for tests
+     * themselves should be put here.
+     * This hook is run once.
+     * @function
+     * @memberof HomepageTests
+     */
     before(async function () {
       await Homepage.openPage(Homepage.url, browser);
     });
 
+    /**
+     * after hook - runs after all tests are done.
+     * Runs only once.
+     * @function
+     * @memberof HomepageTests
+     */
     after(async function () {
       await Homepage.closeBrowser();
     });
 
+    /**
+     * Tests correct Page title.
+     * @function PageTitle
+     * @memberof HomepageTests
+     */
     it(`page title is ${Homepage.pageTitle}`, async function () {
       const title = await Homepage.page.title();
       expect(title).equals(Homepage.pageTitle);
     });
 
+    /**
+     * Tests that consent bar is shown for new visitor.
+     * @function ConsentBar
+     * @memberof HomepageTests
+     */
     it("cookie consent bar is shown", async function () {
       const selectorCheck = await Homepage.page.waitForSelector(
         Homepage.cookieConsentBar.loc,
@@ -29,6 +52,12 @@ Homepage.browsers.forEach(function (browser) {
       expect(selectorCheck).is.not.null;
     });
 
+    /**
+     * Tests that background color of the big header is as
+     * specified by checking against color code in style attr.
+     * @function BackgroundHeaderColor
+     * @memberof HomepageTests
+     */
     it("header background color is correct", async function () {
       const headerBackgroundElement = await Homepage.page.$(
         Homepage.headerBigBackgroundBar.loc

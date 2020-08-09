@@ -11,8 +11,11 @@ class MobileHomepage extends Page {
    */
   constructor() {
     super();
+    /** this page url */
     this.url = "https://www.tesena.com/en";
+    /** this page title */
     this.pageTitle = "Home — Tesena";
   }
 }
+
 module.exports = new MobileHomepage();

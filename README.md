@@ -8,7 +8,10 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Codebase Documentation](docs/codebase.md)
+- Documentation
+
+  - [Page Objects](docs/pageobjects.md)
+  - [Tests (specs)](docs/spec.md)
 
 ## About <a name = "about"></a>
 
