@@ -11,6 +11,7 @@
 - Documentation
 
   - [Page Objects](docs/pageobjects.md)
+  - [Tests (specs)](docs/spec.md)
 
 ## About <a name = "about"></a>
 
