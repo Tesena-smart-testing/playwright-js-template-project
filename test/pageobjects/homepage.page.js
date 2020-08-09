@@ -11,13 +11,18 @@ class Homepage extends Page {
    */
   constructor() {
     super();
+    /** this page url */
     this.url = "https://www.tesena.com/en";
+    /** this page title */
     this.pageTitle = "Home — Tesena";
+    /** {object} information about cookie consent bar */
     this.cookieConsentBar = { loc: '//div[@class="cookie-bar-wrapper"]' };
+    /** {object} information about header background */
     this.headerBigBackgroundBar = {
       loc: '//div[contains(@class, "section-background-cover")]',
       color: "167, 68, 68",
     };
+    /** {object} information about contact form */
     this.contactForm = {
       loc: {
         form: '//form[@id="form_1"]',
@@ -32,4 +37,5 @@ class Homepage extends Page {
     };
   }
 }
+
 module.exports = new Homepage();

@@ -11,8 +11,11 @@ class Services extends Page {
    */
   constructor() {
     super();
+    /** this page url */
     this.url = "https://www.tesena.com/en/services";
+    /** this page title */
     this.pageTitle = "Services — Tesena";
+    /** {object} information about CTA button elements */
     this.ctaBttn = { loc: '//a[@class="btn btn-default"]' };
   }
 
@@ -26,4 +29,5 @@ class Services extends Page {
     return await this.page.$$(this.locCtaBttn);
   }
 }
+
 module.exports = new Services();

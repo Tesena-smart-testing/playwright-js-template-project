@@ -1,8 +1,3 @@
-/**
- * Tests to be run on Homepage of english mutation tesena site.
- * Tests are run on all browsers.
- */
-
 const Homepage = require("../pageobjects/homepage.page");
 const expect = require("chai").expect;
 

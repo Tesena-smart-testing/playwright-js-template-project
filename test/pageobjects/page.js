@@ -1,9 +1,16 @@
+/**
+ * Page module.
+ * Exports default 'Page' class, which is never instantiated itself,
+ * but always extended byt other Page Object classes.
+ * @module
+ */
+
 const Playwright = require("playwright");
 
 /**
- * Generic Page class.
- * This class is not ever instantiated, but always extended by other page classes.
- * @class
+ * Export of class Page as default to be extended by other
+ * Page object classes.
+ * @exports
  */
 module.exports.default = class Page {
   // eslint does not like this
@@ -11,10 +18,16 @@ module.exports.default = class Page {
   // by here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
   // you need to use babel-eslint plugin and modify .eslintrc.js accordingly
   // see: https://github.com/babel/babel-eslint
+
+  /** playwright browser instance */
   browser;
+  /** playwright browser context */
   context;
+  /** playwright context page */
   page;
+  /** browsers supporter by playwright */
   browsers = ["chromium", "firefox", "webkit"];
+  /** GTM url of Tesena site */
   gtmUrl = "https://www.googletagmanager.com/gtm.js?id=GTM-KDG2FB9";
 
   /**
@@ -112,7 +125,7 @@ module.exports.default = class Page {
   }
 
   /**
-   * Returns dataLayer from page context. Basically runs javascript code in the browser
+   * Get dataLayer array object from page context. Basically runs javascript code in the browser
    * and result (if any) is passed back to node runtime.
    * @method
    * @async
