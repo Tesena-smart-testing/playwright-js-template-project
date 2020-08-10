@@ -12,6 +12,7 @@
 
   - [Page Objects](docs/pageobjects.md)
   - [Tests (specs)](docs/spec.md)
+  - [Helpers](docs/helpers.md)
 
 ## About <a name = "about"></a>
 
