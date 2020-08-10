@@ -15,14 +15,18 @@
     -   [PageTitle][11]
     -   [ConsentBar][12]
     -   [BackgroundHeaderColor][13]
--   [NetworkHomepageTests][14]
+-   [DatalayerHomepageTests][14]
     -   [before][15]
     -   [after][16]
-    -   [GTMLoadTest][17]
--   [MobileHomepageTests][18]
+    -   [NonEmptyDatalayerIsPresent][17]
+-   [NetworkHomepageTests][18]
     -   [before][19]
     -   [after][20]
-    -   [pageTitleIsCorrect][21]
+    -   [GTMLoadTest][21]
+-   [MobileHomepageTests][22]
+    -   [before][23]
+    -   [after][24]
+    -   [pageTitleIsCorrect][25]
 
 ## HomepageContactFormTests
 
@@ -88,6 +92,26 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
+## DatalayerHomepageTests
+
+Test suite for dataLayer tests on Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - opens homepage.
+This hooks runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### NonEmptyDatalayerIsPresent
+
+Tests that dataLayer array object is present
+in the browser.window context and is not empty
+
 ## NetworkHomepageTests
 
 Test suite for network traffict on Homepage.
@@ -110,7 +134,7 @@ datalayer events and send them to GA was successfully loaded.
 
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][22] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][26] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -154,20 +178,28 @@ Tests that page title of the mobile version of the homepage is correct
 
 [13]: #backgroundheadercolor
 
-[14]: #networkhomepagetests
+[14]: #datalayerhomepagetests
 
 [15]: #before-2
 
 [16]: #after-2
 
-[17]: #gtmloadtest
+[17]: #nonemptydatalayerispresent
 
-[18]: #mobilehomepagetests
+[18]: #networkhomepagetests
 
 [19]: #before-3
 
 [20]: #after-3
 
-[21]: #pagetitleiscorrect
+[21]: #gtmloadtest
 
-[22]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[22]: #mobilehomepagetests
+
+[23]: #before-4
+
+[24]: #after-4
+
+[25]: #pagetitleiscorrect
+
+[26]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
