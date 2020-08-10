@@ -15,6 +15,10 @@
     -   [PageTitle][11]
     -   [ConsentBar][12]
     -   [BackgroundHeaderColor][13]
+-   [MobileHomepageTests][14]
+    -   [before][15]
+    -   [after][16]
+    -   [pageTitleIsCorrect][17]
 
 ## HomepageContactFormTests
 
@@ -80,6 +84,26 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
+## MobileHomepageTests
+
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][18] - why not Firefox**
+
+Test suite for mobile version of Homepage.
+Parametrized for chromium and webkit.
+
+### before
+
+before hook - ensures start browser with context of
+mobile device we are emulating
+
+### after
+
+after hook - closes browser
+
+### pageTitleIsCorrect
+
+Tests that page title of the mobile version of the homepage is correct
+
 [1]: #homepagecontactformtests
 
 [2]: #before
@@ -105,3 +129,13 @@ specified by checking against color code in style attr.
 [12]: #consentbar
 
 [13]: #backgroundheadercolor
+
+[14]: #mobilehomepagetests
+
+[15]: #before-2
+
+[16]: #after-2
+
+[17]: #pagetitleiscorrect
+
+[18]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
