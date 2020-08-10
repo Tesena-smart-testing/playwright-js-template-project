@@ -1,4 +1,5 @@
 const Homepage = require("../pageobjects/homepage.page");
+const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
 
 Homepage.browsers.forEach(function (browser) {
@@ -28,6 +29,15 @@ Homepage.browsers.forEach(function (browser) {
      */
     after(async function () {
       await Homepage.closeBrowser();
+    });
+
+    /**
+     * afterEach hook - saves screenshot, if test fail
+     * @function
+     * @memberof HomepageTests
+     */
+    afterEach(async function () {
+      await Helpers.takeScreenshot(this, Homepage, "failed", browser);
     });
 
     /**

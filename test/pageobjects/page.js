@@ -6,6 +6,8 @@
  */
 
 const Playwright = require("playwright");
+const path = require("path");
+const fs = require("fs");
 
 /**
  * Export of class Page as default to be extended by other
@@ -142,6 +144,27 @@ module.exports.default = class Page {
   async getDatalayer() {
     return this.page.evaluate(() => {
       return window.dataLayer;
+    });
+  }
+
+  /**
+   * Takes screenshot of full page (not just viewport) and saves it.
+   * @async
+   * @method
+   * @param {string} filename intended filename with extension!
+   */
+  async screenshot(filename) {
+    const dirpath = path.join(process.cwd(), "screenshots");
+    const filepath = path.join(dirpath, filename);
+
+    if (!fs.existsSync(dirpath)) {
+      fs.mkdirSync(dirpath, { recursive: true });
+    }
+
+    await this.page.screenshot({
+      path: filepath,
+      type: "png",
+      fullPage: true,
     });
   }
 };

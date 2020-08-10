@@ -95,3 +95,9 @@ For example, excellent reporters Mochawesome or Allure were hit by this.
 AFAIK, Mochawesome author is aware of this issue, and [investigates how to fix this](https://github.com/adamgruber/mochawesome/issues/321).
 
 **If you want to use Mochawesome or Allure, do not run test specs in parallel, but sequentially - disable this option in `.mocharc.json`**.
+
+#### Screenshots
+
+Currently there is a method implemented, which saves full page screenshot, if test fail. Since we are reporting only to the console now, we are just storing the screenshots to `./screenshots` directory.
+
+You can see, how that works, since one test from spec `homepage.test.js` is set to fail.

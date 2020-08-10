@@ -31,11 +31,13 @@
         -   [verifyElementStyleColor][27]
             -   [Parameters][28]
         -   [getDatalayer][29]
--   [Services][30]
-    -   [url][31]
-    -   [pageTitle][32]
-    -   [ctaBttn][33]
-    -   [getCtaBttnsElements][34]
+        -   [screenshot][30]
+            -   [Parameters][31]
+-   [Services][32]
+    -   [url][33]
+    -   [pageTitle][34]
+    -   [ctaBttn][35]
+    -   [getCtaBttnsElements][36]
 
 ## Homepage
 
@@ -114,7 +116,7 @@ Launches browser of given type as Playwright instance.
 
 ##### Parameters
 
--   `browser` **[string][35]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `browser` **[string][37]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### startNewContext
 
@@ -131,8 +133,8 @@ opens new page and then loads website in that page
 
 ##### Parameters
 
--   `url` **[string][35]** url to open in page
--   `browser` **[string][35]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `url` **[string][37]** url to open in page
+-   `browser` **[string][37]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### closeBrowser
 
@@ -150,9 +152,9 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][36]** elementHandle
+-   `elementHandle` **[object][38]** elementHandle
 
-Returns **[boolean][37]** false, if is not visible, else undefined
+Returns **[boolean][39]** false, if is not visible, else undefined
 
 #### verifyElementStyleColor
 
@@ -160,17 +162,25 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][36]** elementHandle object returned from page
--   `color` **[string][35]** color code to check, if present in the element style attribute value
+-   `element` **[object][38]** elementHandle object returned from page
+-   `color` **[string][37]** color code to check, if present in the element style attribute value
 
-Returns **[boolean][37]** true, if color code is present, else false
+Returns **[boolean][39]** true, if color code is present, else false
 
 #### getDatalayer
 
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][38]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][40]** datalayer - an array of objects, each object is a tracking event
+
+#### screenshot
+
+Takes screenshot of full page (not just viewport) and saves it.
+
+##### Parameters
+
+-   `filename` **[string][37]** intended filename with extension!
 
 ## Services
 
@@ -194,7 +204,7 @@ this page title
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][38]** element handles of CTA bttns
+Returns **[Array][40]** element handles of CTA bttns
 
 [1]: #homepage
 
@@ -254,20 +264,24 @@ Returns **[Array][38]** element handles of CTA bttns
 
 [29]: #getdatalayer
 
-[30]: #services
+[30]: #screenshot
 
-[31]: #url-2
+[31]: #parameters-4
 
-[32]: #pagetitle-2
+[32]: #services
 
-[33]: #ctabttn
+[33]: #url-2
 
-[34]: #getctabttnselements
+[34]: #pagetitle-2
 
-[35]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[35]: #ctabttn
 
-[36]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[36]: #getctabttnselements
 
-[37]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[37]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[38]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[38]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[40]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

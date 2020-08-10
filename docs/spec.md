@@ -11,31 +11,37 @@
     -   [ErrorMessagesDisplayed][7]
 -   [DatalayerHomepageTests][8]
     -   [before][9]
-    -   [after][10]
-    -   [NonEmptyDatalayerIsPresent][11]
--   [HomepageTests][12]
-    -   [before][13]
-    -   [after][14]
-    -   [PageTitleIsCorrect][15]
-    -   [ConsentBar][16]
-    -   [BackgroundHeaderColor][17]
--   [ServicesPageTests][18]
-    -   [before][19]
-    -   [after][20]
-    -   [PageTitleIsCorrect][21]
-    -   [CTAButtonsVisible][22]
--   [CrossPageTests][23]
-    -   [before][24]
-    -   [after][25]
-    -   [ConsentBarNotDisplayed][26]
--   [NetworkHomepageTests][27]
-    -   [before][28]
-    -   [after][29]
-    -   [GTMLoadTest][30]
--   [MobileHomepageTests][31]
+    -   [afterEach][10]
+    -   [after][11]
+    -   [NonEmptyDatalayerIsPresent][12]
+-   [HomepageTests][13]
+    -   [before][14]
+    -   [after][15]
+    -   [afterEach][16]
+    -   [PageTitleIsCorrect][17]
+    -   [ConsentBar][18]
+    -   [BackgroundHeaderColor][19]
+-   [ServicesPageTests][20]
+    -   [before][21]
+    -   [after][22]
+    -   [afterEach][23]
+    -   [PageTitleIsCorrect][24]
+    -   [CTAButtonsVisible][25]
+-   [CrossPageTests][26]
+    -   [before][27]
+    -   [after][28]
+    -   [afterEach][29]
+    -   [ConsentBarNotDisplayed][30]
+-   [NetworkHomepageTests][31]
     -   [before][32]
     -   [after][33]
-    -   [pageTitleIsCorrect][34]
+    -   [afterEach][34]
+    -   [GTMLoadTest][35]
+-   [MobileHomepageTests][36]
+    -   [before][37]
+    -   [after][38]
+    -   [afterEach][39]
+    -   [pageTitleIsCorrect][40]
 
 ## HomepageContactFormTests
 
@@ -82,6 +88,10 @@ Parametrized for all supported browsers.
 before hook - opens homepage.
 This hooks runs only once.
 
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
 ### after
 
 after hook - closes browser.
@@ -107,6 +117,10 @@ This hook is run once.
 
 after hook - closes browser.
 Runs only once.
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
 
 ### PageTitleIsCorrect
 
@@ -136,6 +150,10 @@ This hook runs only once.
 after hook - closes browser.
 This hook runs only once.
 
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
 ### PageTitleIsCorrect
 
 Tests that Page title is correct.
@@ -160,6 +178,10 @@ This hook runs only once.
 after hook - closes the browser.
 This hook runs only once.
 
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
 ### ConsentBarNotDisplayed
 
 Tests that cookie consent bar will not be displayed
@@ -179,6 +201,10 @@ url returned with HTTP code 200
 
 after hook - closes browser
 
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
 ### GTMLoadTest
 
 Tests, that Google GTM script, which is responsible for handling the tracking
@@ -186,7 +212,7 @@ datalayer events and send them to GA was successfully loaded.
 
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][35] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][41] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -199,6 +225,10 @@ mobile device we are emulating
 ### after
 
 after hook - closes browser
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
 
 ### pageTitleIsCorrect
 
@@ -222,54 +252,66 @@ Tests that page title of the mobile version of the homepage is correct
 
 [9]: #before-1
 
-[10]: #after-1
+[10]: #aftereach-1
 
-[11]: #nonemptydatalayerispresent
+[11]: #after-1
 
-[12]: #homepagetests
+[12]: #nonemptydatalayerispresent
 
-[13]: #before-2
+[13]: #homepagetests
 
-[14]: #after-2
+[14]: #before-2
 
-[15]: #pagetitleiscorrect
+[15]: #after-2
 
-[16]: #consentbar
+[16]: #aftereach-2
 
-[17]: #backgroundheadercolor
+[17]: #pagetitleiscorrect
 
-[18]: #servicespagetests
+[18]: #consentbar
 
-[19]: #before-3
+[19]: #backgroundheadercolor
 
-[20]: #after-3
+[20]: #servicespagetests
 
-[21]: #pagetitleiscorrect-1
+[21]: #before-3
 
-[22]: #ctabuttonsvisible
+[22]: #after-3
 
-[23]: #crosspagetests
+[23]: #aftereach-3
 
-[24]: #before-4
+[24]: #pagetitleiscorrect-1
 
-[25]: #after-4
+[25]: #ctabuttonsvisible
 
-[26]: #consentbarnotdisplayed
+[26]: #crosspagetests
 
-[27]: #networkhomepagetests
+[27]: #before-4
 
-[28]: #before-5
+[28]: #after-4
 
-[29]: #after-5
+[29]: #aftereach-4
 
-[30]: #gtmloadtest
+[30]: #consentbarnotdisplayed
 
-[31]: #mobilehomepagetests
+[31]: #networkhomepagetests
 
-[32]: #before-6
+[32]: #before-5
 
-[33]: #after-6
+[33]: #after-5
 
-[34]: #pagetitleiscorrect-2
+[34]: #aftereach-5
 
-[35]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[35]: #gtmloadtest
+
+[36]: #mobilehomepagetests
+
+[37]: #before-6
+
+[38]: #after-6
+
+[39]: #aftereach-6
+
+[40]: #pagetitleiscorrect-2
+
+[41]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
