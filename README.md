@@ -3,6 +3,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![linter: eslint:recommended](https://img.shields.io/badge/linter-eslint:recommended-blue)](https://github.com/eslint/eslint)
 ![Continuous Integration](https://github.com/Tesena-smart-testing/playwright-js-template-project/workflows/Continuous%20Integration/badge.svg)
+![PR merge](https://github.com/Tesena-smart-testing/playwright-js-template-project/workflows/PR%20merge/badge.svg)
 
 ## Table of Contents
 
