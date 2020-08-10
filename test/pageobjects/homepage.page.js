@@ -18,7 +18,7 @@ class Homepage extends Page {
     /** {object} information about header background */
     this.headerBigBackgroundBar = {
       loc: '//div[contains(@class, "section-background-cover")]',
-      color: "167, 68, 68",
+      color: "167, 68, 69",
     };
     /** {object} information about contact form */
     this.contactForm = {
