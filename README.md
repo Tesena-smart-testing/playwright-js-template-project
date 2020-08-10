@@ -71,3 +71,15 @@ To further shorten the work, create npm skripts, e.g `npm test` in package.json 
 ```
 npm test
 ```
+
+### Reporting
+
+Test results are reported into the console, by default `spec` reporter.
+
+Currently, as Mochajs introduced native support for parallel execution, most third party reporters stopped working properly or at all in this mode.
+
+For example, excellent reporters Mochawesome or Allure were hit by this. 
+
+AFAIK, Mochawesome author is aware of this issue, and [investigates how to fix this](https://github.com/adamgruber/mochawesome/issues/321).
+
+**If you want to use Mochawesome or Allure, do not run test specs in parallel, but sequentially - disable this option in `.mocharc.json`**.
