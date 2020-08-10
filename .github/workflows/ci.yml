@@ -1,0 +1,40 @@
+# Continuous Integration workflow
+
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: [ master ]
+
+# formatting job
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        # Make sure the actual branch is checked out when running on pull requests
+        ref: ${{ github.head_ref }}
+
+    - name: Prettify code
+      uses: creyD/prettier_action@v2.2
+      with:
+        # This part is also where you can pass other options, for example:
+        # prettier_options: --write **/*.{js}
+          commit_message: "Code was Prettified."  
+  
+  # linting job
+  eslint:
+    needs: [prettier]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hallee/eslint-action@1.0.3
+        # GITHUB_TOKEN in forked repositories is read-only
+        # https://help.github.com/en/actions/reference/events-that-trigger-workflows#pull-request-event-pull_request
+        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }} 
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+#           source-root: test
