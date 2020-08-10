@@ -6,6 +6,7 @@ Homepage.browsers.forEach(function (browser) {
    * Test suite for Homepage.
    * Parametrized for all supported browsers.
    * @function HomepageTests
+   * @requires module:Homepage
    */
   describe(`${browser}: Homepage tests`, function () {
     /**

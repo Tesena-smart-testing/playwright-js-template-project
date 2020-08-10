@@ -6,6 +6,7 @@ Homepage.browsers.forEach(function (browser) {
    * Test suite for Contact Form in Homepage.
    * Parametrized for all supported browsers.
    * @function HomepageContactFormTests
+   * @requires module:Homepage
    */
   describe(`${browser}: Contact Form tests`, function () {
     /**
