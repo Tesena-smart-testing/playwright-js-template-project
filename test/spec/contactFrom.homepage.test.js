@@ -51,6 +51,18 @@ Homepage.browsers.forEach(function (browser) {
      * @memberof HomepageContactFormTests
      */
     afterEach(async function () {
+      if (this.currentTest.state !== "passed") {
+        await Homepage.takeScreenshot(
+          "FAILED_".concat(
+            browser,
+            "_",
+            this.currentTest.title,
+            "_",
+            Date.now().toString(),
+            ".png"
+          )
+        );
+      }
       await Homepage.closeContext();
     });
 
@@ -60,9 +72,7 @@ Homepage.browsers.forEach(function (browser) {
      * @memberof HomepageContactFormTests
      */
     it("form is visible", async function () {
-      const elementHandle = await Homepage.page.$(
-        Homepage.contactForm.loc.form
-      );
+      const elementHandle = await Homepage.page.$(Homepage.contactForm.loc.for);
       const status = await Homepage.isVisible_(elementHandle);
       expect(status).not.to.be.false;
     });
