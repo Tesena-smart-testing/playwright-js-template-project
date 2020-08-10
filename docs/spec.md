@@ -2,12 +2,126 @@
 
 ### Table of Contents
 
--   [HomepageTests][1]
+-   [HomepageContactFormTests][1]
     -   [before][2]
     -   [after][3]
-    -   [PageTitle][4]
-    -   [ConsentBar][5]
-    -   [BackgroundHeaderColor][6]
+    -   [beforeEach][4]
+    -   [afterEach][5]
+    -   [FormIsVisible][6]
+    -   [ErrorMessagesDisplayed][7]
+-   [DatalayerHomepageTests][8]
+    -   [before][9]
+    -   [after][10]
+    -   [NonEmptyDatalayerIsPresent][11]
+-   [HomepageTests][12]
+    -   [before][13]
+    -   [after][14]
+    -   [PageTitleIsCorrect][15]
+    -   [ConsentBar][16]
+    -   [BackgroundHeaderColor][17]
+-   [MobileHomepageTests][18]
+    -   [before][19]
+    -   [after][20]
+    -   [pageTitleIsCorrect][21]
+-   [MobileHomepage][22]
+    -   [url][23]
+    -   [pageTitle][24]
+-   [devicesToTest][25]
+-   [NetworkHomepageTests][26]
+    -   [before][27]
+    -   [after][28]
+    -   [GTMLoadTest][29]
+-   [Homepage][30]
+    -   [url][31]
+    -   [pageTitle][32]
+    -   [cookieConsentBar][33]
+    -   [headerBigBackgroundBar][34]
+    -   [contactForm][35]
+-   [page][36]
+    -   [default][37]
+        -   [browser][38]
+        -   [context][39]
+        -   [page][40]
+        -   [browsers][41]
+        -   [gtmUrl][42]
+        -   [launchBrowser][43]
+            -   [Parameters][44]
+        -   [startNewContext][45]
+        -   [openNewPage][46]
+        -   [openPage][47]
+            -   [Parameters][48]
+        -   [closeBrowser][49]
+        -   [closeContext][50]
+        -   [isVisible\_][51]
+            -   [Parameters][52]
+        -   [verifyElementStyleColor][53]
+            -   [Parameters][54]
+        -   [getDatalayer][55]
+-   [ServicesPageTests][56]
+    -   [before][57]
+    -   [after][58]
+    -   [PageTitleIsCorrect][59]
+    -   [CTAButtonsVisible][60]
+-   [Services][61]
+    -   [url][62]
+    -   [pageTitle][63]
+    -   [ctaBttn][64]
+    -   [getCtaBttnsElements][65]
+
+## HomepageContactFormTests
+
+Test suite for Contact Form in Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - launches the browser.
+Runs only once.
+
+### after
+
+after hook - closes the browser.
+Runs only once.
+
+### beforeEach
+
+beforeEach hook - starts Context, page, goes to given url
+and waits until network traffic is idle.
+Runs before each test.
+
+### afterEach
+
+afterEach hook - closes the context.
+Runs after each test.
+
+### FormIsVisible
+
+Tests, that the Contact Form element is visible.
+
+### ErrorMessagesDisplayed
+
+Tests, that error messages displayed for required fields
+if send action is attempted.
+
+## DatalayerHomepageTests
+
+Test suite for dataLayer tests on Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - opens homepage.
+This hooks runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### NonEmptyDatalayerIsPresent
+
+Tests that dataLayer array object is present
+in the browser.window context and is not empty
 
 ## HomepageTests
 
@@ -16,16 +130,16 @@ Parametrized for all supported browsers.
 
 ### before
 
-before hook - everything needed to set things up for tests
-themselves should be put here.
+before hook - opens the browser, context and page
+and goes to page.url
 This hook is run once.
 
 ### after
 
-after hook - runs after all tests are done.
+after hook - closes browser.
 Runs only once.
 
-### PageTitle
+### PageTitleIsCorrect
 
 Tests correct Page title.
 
@@ -38,14 +152,368 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
-[1]: #homepagetests
+## MobileHomepageTests
+
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][66] - why not Firefox**
+
+Test suite for mobile version of Homepage.
+Parametrized for chromium and webkit.
+
+### before
+
+before hook - ensures start browser with context of
+mobile device we are emulating
+
+### after
+
+after hook - closes browser
+
+### pageTitleIsCorrect
+
+Tests that page title of the mobile version of the homepage is correct
+
+## MobileHomepage
+
+**Extends Page**
+
+Page object for Mobile version of Homepage
+
+### url
+
+this page url
+
+### pageTitle
+
+this page title
+
+## devicesToTest
+
+Devices selected from playwright list of mobile devices available for browser emulation
+
+## NetworkHomepageTests
+
+Test suite for network traffict on Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - starts browser and all that stuff.
+Starts network listener to check, if request to tested
+url returned with HTTP code 200
+
+### after
+
+after hook - closes browser
+
+### GTMLoadTest
+
+Tests, that Google GTM script, which is responsible for handling the tracking
+datalayer events and send them to GA was successfully loaded.
+
+## Homepage
+
+**Extends Page**
+
+Class for Homepage
+
+### url
+
+this page url
+
+### pageTitle
+
+this page title
+
+### cookieConsentBar
+
+{object} information about cookie consent bar
+
+### headerBigBackgroundBar
+
+{object} information about header background
+
+### contactForm
+
+{object} information about contact form
+
+## page
+
+Page module.
+Exports default 'Page' class, which is never instantiated itself,
+but always extended byt other Page Object classes.
+
+### default
+
+Export of class Page as default to be extended by other
+Page object classes.
+
+#### browser
+
+playwright browser instance
+
+#### context
+
+playwright browser context
+
+#### page
+
+playwright context page
+
+#### browsers
+
+browsers supporter by playwright
+
+#### gtmUrl
+
+GTM url of Tesena site
+
+#### launchBrowser
+
+Launches browser of given type as Playwright instance.
+
+##### Parameters
+
+-   `browser` **[string][67]** supported browser type, e.g. "chromium", "firefox", "webkit"
+
+#### startNewContext
+
+Starts new context in already running browser instance.
+
+#### openNewPage
+
+Opens new page in already existing browser context.
+
+#### openPage
+
+Launches Playwrights for given browser, starts new Context,
+opens new page and then loads website in that page
+
+##### Parameters
+
+-   `url` **[string][67]** url to open in page
+-   `browser` **[string][67]** supported browser type, e.g. "chromium", "firefox", "webkit"
+
+#### closeBrowser
+
+close Playwright browser object instance
+
+#### closeContext
+
+Close browser context. All pages in this context will be closed.
+Default context cannot be closed.
+
+#### isVisible\_
+
+Checks, if element is visible on the page by
+"abusing" elementHandle.scrollIntoViewIfNeeded() method
+
+##### Parameters
+
+-   `elementHandle` **[object][68]** elementHandle
+
+Returns **[boolean][69]** false, if is not visible, else undefined
+
+#### verifyElementStyleColor
+
+Checks, whether element specified style color is present in the element style attribute value
+
+##### Parameters
+
+-   `element` **[object][68]** elementHandle object returned from page
+-   `color` **[string][67]** color code to check, if present in the element style attribute value
+
+Returns **[boolean][69]** true, if color code is present, else false
+
+#### getDatalayer
+
+Get dataLayer array object from page context. Basically runs javascript code in the browser
+and result (if any) is passed back to node runtime.
+
+Returns **[Array][70]** datalayer - an array of objects, each object is a tracking event
+
+## ServicesPageTests
+
+Test suite for Service page.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - opens Services page.
+This hook runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### PageTitleIsCorrect
+
+Tests that Page title is correct.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
+
+## Services
+
+**Extends Page**
+
+Class for Services page
+
+### url
+
+this page url
+
+### pageTitle
+
+this page title
+
+### ctaBttn
+
+{object} information about CTA button elements
+
+### getCtaBttnsElements
+
+returns Array of element handles of CTA bttns
+
+Returns **[Array][70]** element handles of CTA bttns
+
+[1]: #homepagecontactformtests
 
 [2]: #before
 
 [3]: #after
 
-[4]: #pagetitle
+[4]: #beforeeach
 
-[5]: #consentbar
+[5]: #aftereach
 
-[6]: #backgroundheadercolor
+[6]: #formisvisible
+
+[7]: #errormessagesdisplayed
+
+[8]: #datalayerhomepagetests
+
+[9]: #before-1
+
+[10]: #after-1
+
+[11]: #nonemptydatalayerispresent
+
+[12]: #homepagetests
+
+[13]: #before-2
+
+[14]: #after-2
+
+[15]: #pagetitleiscorrect
+
+[16]: #consentbar
+
+[17]: #backgroundheadercolor
+
+[18]: #mobilehomepagetests
+
+[19]: #before-3
+
+[20]: #after-3
+
+[21]: #pagetitleiscorrect-1
+
+[22]: #mobilehomepage
+
+[23]: #url
+
+[24]: #pagetitle
+
+[25]: #devicestotest
+
+[26]: #networkhomepagetests
+
+[27]: #before-4
+
+[28]: #after-4
+
+[29]: #gtmloadtest
+
+[30]: #homepage
+
+[31]: #url-1
+
+[32]: #pagetitle-1
+
+[33]: #cookieconsentbar
+
+[34]: #headerbigbackgroundbar
+
+[35]: #contactform
+
+[36]: #page
+
+[37]: #default
+
+[38]: #browser
+
+[39]: #context
+
+[40]: #page-1
+
+[41]: #browsers
+
+[42]: #gtmurl
+
+[43]: #launchbrowser
+
+[44]: #parameters
+
+[45]: #startnewcontext
+
+[46]: #opennewpage
+
+[47]: #openpage
+
+[48]: #parameters-1
+
+[49]: #closebrowser
+
+[50]: #closecontext
+
+[51]: #isvisible_
+
+[52]: #parameters-2
+
+[53]: #verifyelementstylecolor
+
+[54]: #parameters-3
+
+[55]: #getdatalayer
+
+[56]: #servicespagetests
+
+[57]: #before-5
+
+[58]: #after-5
+
+[59]: #pagetitleiscorrect-2
+
+[60]: #ctabuttonsvisible
+
+[61]: #services
+
+[62]: #url-2
+
+[63]: #pagetitle-2
+
+[64]: #ctabttn
+
+[65]: #getctabttnselements
+
+[66]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+
+[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

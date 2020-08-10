@@ -6,11 +6,12 @@ Homepage.browsers.forEach(function (browser) {
    * Test suite for Homepage.
    * Parametrized for all supported browsers.
    * @function HomepageTests
+   * @requires module:Homepage
    */
   describe(`${browser}: Homepage tests`, function () {
     /**
-     * before hook - everything needed to set things up for tests
-     * themselves should be put here.
+     * before hook - opens the browser, context and page
+     * and goes to page.url
      * This hook is run once.
      * @function
      * @memberof HomepageTests
@@ -20,7 +21,7 @@ Homepage.browsers.forEach(function (browser) {
     });
 
     /**
-     * after hook - runs after all tests are done.
+     * after hook - closes browser.
      * Runs only once.
      * @function
      * @memberof HomepageTests
@@ -31,7 +32,7 @@ Homepage.browsers.forEach(function (browser) {
 
     /**
      * Tests correct Page title.
-     * @function PageTitle
+     * @function PageTitleIsCorrect
      * @memberof HomepageTests
      */
     it(`page title is ${Homepage.pageTitle}`, async function () {

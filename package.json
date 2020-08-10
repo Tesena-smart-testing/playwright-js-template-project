@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha test\\spec\\** --config .mocharc.json",
     "docs-pop": "documentation build test\\pageobjects\\** -f md -o docs\\pageobjects.md",
-    "docs-spec": "documentation build test\\spec\\** -f md -o docs\\spec.md"
+    "docs-spec": "documentation build test\\spec\\** -f md -o docs\\spec.md",
+    "docs-helpers": "documentation build test\\helpers\\** -f md -o docs\\helpers.md"
   },
   "repository": {
     "type": "git",

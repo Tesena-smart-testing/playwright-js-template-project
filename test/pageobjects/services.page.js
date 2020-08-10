@@ -26,7 +26,7 @@ class Services extends Page {
    * @returns {Array} element handles of CTA bttns
    */
   async getCtaBttnsElements() {
-    return await this.page.$$(this.locCtaBttn);
+    return await this.page.$$(this.ctaBttn.loc);
   }
 }
 
