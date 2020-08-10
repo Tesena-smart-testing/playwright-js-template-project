@@ -15,8 +15,6 @@ class Homepage extends Page {
     this.url = "https://www.tesena.com/en";
     /** this page title */
     this.pageTitle = "Home — Tesena";
-    /** {object} information about cookie consent bar */
-    this.cookieConsentBar = { loc: '//div[@class="cookie-bar-wrapper"]' };
     /** {object} information about header background */
     this.headerBigBackgroundBar = {
       loc: '//div[contains(@class, "section-background-cover")]',

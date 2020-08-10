@@ -47,7 +47,7 @@ Homepage.browsers.forEach(function (browser) {
      */
     it("cookie consent bar is shown", async function () {
       const selectorCheck = await Homepage.page.waitForSelector(
-        Homepage.cookieConsentBar.loc,
+        Homepage.cookieConsentBar.loc.bar,
         { state: "visible" }
       );
       expect(selectorCheck).is.not.null;
