@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them.
 
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/) - javascript runtime - you really need this :)
 
 ### Installing
 
@@ -44,16 +44,25 @@ Be in the root of the project and install and update all dependecies:
 
 ```
 npm install
+// if update happens, do not commit changes to the master!!!
 npm update
 ```
 
-## Test development - core rules
+## Test development
 
-- do not push to the master - I will revert it, no questions asked
-- until CI pipeline with linting and formatting is setup, use on your development local:
+### Core rules
+
+- do not push to the master - **I will revert it, no questions asked**
+- CI pipeline with linting and formatting checks for pull requests is set up, but still use on your development local:
 
   - [eslint](https://github.com/eslint/eslint) - to check, catch and remove errors, bugs. Has plugin in VScode
   - [prettier](https://github.com/prettier/prettier) - to keep code formatting consistent. Has plugin in VScode.
+
+- when creating PR in Github repository, add label `automerge`. If checks pass, your PR will be automatically merged to the master.
+
+## Documentation
+
+Codebase (test files included) docs are generated via [Documentation.js](https://documentation.js.org/) tool. Check its documentation to figure out how to work with it, or use predefined npm scripts in `package.json`.
 
 ## Usage <a name = "usage"></a>
 
