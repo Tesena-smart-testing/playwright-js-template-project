@@ -1,4 +1,5 @@
 const MobileHomepage = require("../pageobjects/mobile.homepage.page");
+const Helpers = require("../helpers/helpers");
 const devicesToTest = require("../helpers/devices");
 const expect = require("chai").expect;
 
@@ -41,6 +42,15 @@ const devicesNames = Object.keys(devicesToTest);
        */
       after(async function () {
         await MobileHomepage.closeBrowser();
+      });
+
+      /**
+       * afterEach hook - saves screenshot, if test fail
+       * @function
+       * @memberof MobileHomepageTests
+       */
+      afterEach(async function () {
+        await Helpers.takeScreenshot(this, MobileHomepage, "failed", browser);
       });
 
       /**

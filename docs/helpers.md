@@ -3,9 +3,58 @@
 ### Table of Contents
 
 -   [devicesToTest][1]
+-   [Helpers][2]
+    -   [takeScreenshot][3]
+        -   [Parameters][4]
+-   [Helpers][5]
+    -   [takeScreenshot][6]
+        -   [Parameters][7]
 
 ## devicesToTest
 
 Devices selected from playwright list of mobile devices available for browser emulation
 
+## Helpers
+
+Helpers module.
+Provides methods to be used across the project.
+
+### takeScreenshot
+
+#### Parameters
+
+-   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][9]** `passed` or `failed`
+-   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+
+## Helpers
+
+Class Helpers.
+
+### takeScreenshot
+
+#### Parameters
+
+-   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][9]** `passed` or `failed`
+-   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+
 [1]: #devicestotest
+
+[2]: #helpers
+
+[3]: #takescreenshot
+
+[4]: #parameters
+
+[5]: #helpers-1
+
+[6]: #takescreenshot-1
+
+[7]: #parameters-1
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

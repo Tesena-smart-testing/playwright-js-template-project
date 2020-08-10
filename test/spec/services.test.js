@@ -1,4 +1,5 @@
 const Services = require("../pageobjects/services.page");
+const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
 
 Services.browsers.forEach(function (browser) {
@@ -27,6 +28,15 @@ Services.browsers.forEach(function (browser) {
      */
     after(async function () {
       await Services.closeBrowser();
+    });
+
+    /**
+     * afterEach hook - saves screenshot, if test fail
+     * @function
+     * @memberof ServicesPageTests
+     */
+    afterEach(async function () {
+      await Helpers.takeScreenshot(this, Services, "failed", browser);
     });
 
     /**

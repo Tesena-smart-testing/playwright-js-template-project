@@ -1,4 +1,5 @@
 const Homepage = require("../pageobjects/homepage.page");
+const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
 
 Homepage.browsers.forEach(function (browser) {
@@ -51,18 +52,7 @@ Homepage.browsers.forEach(function (browser) {
      * @memberof HomepageContactFormTests
      */
     afterEach(async function () {
-      if (this.currentTest.state !== "passed") {
-        await Homepage.takeScreenshot(
-          "FAILED_".concat(
-            browser,
-            "_",
-            this.currentTest.title,
-            "_",
-            Date.now().toString(),
-            ".png"
-          )
-        );
-      }
+      await Helpers.takeScreenshot(this, Homepage, "failed", browser);
       await Homepage.closeContext();
     });
 
@@ -72,7 +62,9 @@ Homepage.browsers.forEach(function (browser) {
      * @memberof HomepageContactFormTests
      */
     it("form is visible", async function () {
-      const elementHandle = await Homepage.page.$(Homepage.contactForm.loc.for);
+      const elementHandle = await Homepage.page.$(
+        Homepage.contactForm.loc.form
+      );
       const status = await Homepage.isVisible_(elementHandle);
       expect(status).not.to.be.false;
     });

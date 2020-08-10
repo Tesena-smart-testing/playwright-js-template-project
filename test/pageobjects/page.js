@@ -153,7 +153,7 @@ module.exports.default = class Page {
    * @method
    * @param {string} filename intended filename with extension!
    */
-  async takeScreenshot(filename) {
+  async screenshot(filename) {
     const dirpath = path.join(process.cwd(), "screenshots");
     const filepath = path.join(dirpath, filename);
 
