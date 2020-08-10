@@ -2,12 +2,54 @@
 
 ### Table of Contents
 
--   [HomepageTests][1]
+-   [HomepageContactFormTests][1]
     -   [before][2]
     -   [after][3]
-    -   [PageTitle][4]
-    -   [ConsentBar][5]
-    -   [BackgroundHeaderColor][6]
+    -   [beforeEach][4]
+    -   [afterEach][5]
+    -   [FormIsVisible][6]
+    -   [ErrorMessagesDisplayed][7]
+-   [HomepageTests][8]
+    -   [before][9]
+    -   [after][10]
+    -   [PageTitle][11]
+    -   [ConsentBar][12]
+    -   [BackgroundHeaderColor][13]
+
+## HomepageContactFormTests
+
+Test suite for Contact Form in Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - launches the browser.
+Runs only once.
+
+### after
+
+after hook - closes the browser.
+Runs only once.
+
+### beforeEach
+
+beforeEach hook - starts Context, page, goes to given url
+and waits until network traffic is idle.
+Runs before each test.
+
+### afterEach
+
+afterEach hook - closes the context.
+Runs after each test.
+
+### FormIsVisible
+
+Tests, that the Contact Form element is visible.
+
+### ErrorMessagesDisplayed
+
+Tests, that error messages displayed for required fields
+if send action is attempted.
 
 ## HomepageTests
 
@@ -16,13 +58,13 @@ Parametrized for all supported browsers.
 
 ### before
 
-before hook - everything needed to set things up for tests
-themselves should be put here.
+before hook - opens the browser, context and page
+and goes to page.url
 This hook is run once.
 
 ### after
 
-after hook - runs after all tests are done.
+after hook - closes browser.
 Runs only once.
 
 ### PageTitle
@@ -38,14 +80,28 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
-[1]: #homepagetests
+[1]: #homepagecontactformtests
 
 [2]: #before
 
 [3]: #after
 
-[4]: #pagetitle
+[4]: #beforeeach
 
-[5]: #consentbar
+[5]: #aftereach
 
-[6]: #backgroundheadercolor
+[6]: #formisvisible
+
+[7]: #errormessagesdisplayed
+
+[8]: #homepagetests
+
+[9]: #before-1
+
+[10]: #after-1
+
+[11]: #pagetitle
+
+[12]: #consentbar
+
+[13]: #backgroundheadercolor
