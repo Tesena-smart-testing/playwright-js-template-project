@@ -19,54 +19,23 @@
     -   [PageTitleIsCorrect][15]
     -   [ConsentBar][16]
     -   [BackgroundHeaderColor][17]
--   [MobileHomepageTests][18]
+-   [ServicesPageTests][18]
     -   [before][19]
     -   [after][20]
-    -   [pageTitleIsCorrect][21]
--   [MobileHomepage][22]
-    -   [url][23]
-    -   [pageTitle][24]
--   [devicesToTest][25]
--   [NetworkHomepageTests][26]
-    -   [before][27]
-    -   [after][28]
-    -   [GTMLoadTest][29]
--   [Homepage][30]
-    -   [url][31]
-    -   [pageTitle][32]
-    -   [cookieConsentBar][33]
-    -   [headerBigBackgroundBar][34]
-    -   [contactForm][35]
--   [page][36]
-    -   [default][37]
-        -   [browser][38]
-        -   [context][39]
-        -   [page][40]
-        -   [browsers][41]
-        -   [gtmUrl][42]
-        -   [launchBrowser][43]
-            -   [Parameters][44]
-        -   [startNewContext][45]
-        -   [openNewPage][46]
-        -   [openPage][47]
-            -   [Parameters][48]
-        -   [closeBrowser][49]
-        -   [closeContext][50]
-        -   [isVisible\_][51]
-            -   [Parameters][52]
-        -   [verifyElementStyleColor][53]
-            -   [Parameters][54]
-        -   [getDatalayer][55]
--   [ServicesPageTests][56]
-    -   [before][57]
-    -   [after][58]
-    -   [PageTitleIsCorrect][59]
-    -   [CTAButtonsVisible][60]
--   [Services][61]
-    -   [url][62]
-    -   [pageTitle][63]
-    -   [ctaBttn][64]
-    -   [getCtaBttnsElements][65]
+    -   [PageTitleIsCorrect][21]
+    -   [CTAButtonsVisible][22]
+-   [CrossPageTests][23]
+    -   [before][24]
+    -   [after][25]
+    -   [ConsentBarNotDisplayed][26]
+-   [NetworkHomepageTests][27]
+    -   [before][28]
+    -   [after][29]
+    -   [GTMLoadTest][30]
+-   [MobileHomepageTests][31]
+    -   [before][32]
+    -   [after][33]
+    -   [pageTitleIsCorrect][34]
 
 ## HomepageContactFormTests
 
@@ -152,185 +121,6 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
-## MobileHomepageTests
-
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][66] - why not Firefox**
-
-Test suite for mobile version of Homepage.
-Parametrized for chromium and webkit.
-
-### before
-
-before hook - ensures start browser with context of
-mobile device we are emulating
-
-### after
-
-after hook - closes browser
-
-### pageTitleIsCorrect
-
-Tests that page title of the mobile version of the homepage is correct
-
-## MobileHomepage
-
-**Extends Page**
-
-Page object for Mobile version of Homepage
-
-### url
-
-this page url
-
-### pageTitle
-
-this page title
-
-## devicesToTest
-
-Devices selected from playwright list of mobile devices available for browser emulation
-
-## NetworkHomepageTests
-
-Test suite for network traffict on Homepage.
-Parametrized for all supported browsers.
-
-### before
-
-before hook - starts browser and all that stuff.
-Starts network listener to check, if request to tested
-url returned with HTTP code 200
-
-### after
-
-after hook - closes browser
-
-### GTMLoadTest
-
-Tests, that Google GTM script, which is responsible for handling the tracking
-datalayer events and send them to GA was successfully loaded.
-
-## Homepage
-
-**Extends Page**
-
-Class for Homepage
-
-### url
-
-this page url
-
-### pageTitle
-
-this page title
-
-### cookieConsentBar
-
-{object} information about cookie consent bar
-
-### headerBigBackgroundBar
-
-{object} information about header background
-
-### contactForm
-
-{object} information about contact form
-
-## page
-
-Page module.
-Exports default 'Page' class, which is never instantiated itself,
-but always extended byt other Page Object classes.
-
-### default
-
-Export of class Page as default to be extended by other
-Page object classes.
-
-#### browser
-
-playwright browser instance
-
-#### context
-
-playwright browser context
-
-#### page
-
-playwright context page
-
-#### browsers
-
-browsers supporter by playwright
-
-#### gtmUrl
-
-GTM url of Tesena site
-
-#### launchBrowser
-
-Launches browser of given type as Playwright instance.
-
-##### Parameters
-
--   `browser` **[string][67]** supported browser type, e.g. "chromium", "firefox", "webkit"
-
-#### startNewContext
-
-Starts new context in already running browser instance.
-
-#### openNewPage
-
-Opens new page in already existing browser context.
-
-#### openPage
-
-Launches Playwrights for given browser, starts new Context,
-opens new page and then loads website in that page
-
-##### Parameters
-
--   `url` **[string][67]** url to open in page
--   `browser` **[string][67]** supported browser type, e.g. "chromium", "firefox", "webkit"
-
-#### closeBrowser
-
-close Playwright browser object instance
-
-#### closeContext
-
-Close browser context. All pages in this context will be closed.
-Default context cannot be closed.
-
-#### isVisible\_
-
-Checks, if element is visible on the page by
-"abusing" elementHandle.scrollIntoViewIfNeeded() method
-
-##### Parameters
-
--   `elementHandle` **[object][68]** elementHandle
-
-Returns **[boolean][69]** false, if is not visible, else undefined
-
-#### verifyElementStyleColor
-
-Checks, whether element specified style color is present in the element style attribute value
-
-##### Parameters
-
--   `element` **[object][68]** elementHandle object returned from page
--   `color` **[string][67]** color code to check, if present in the element style attribute value
-
-Returns **[boolean][69]** true, if color code is present, else false
-
-#### getDatalayer
-
-Get dataLayer array object from page context. Basically runs javascript code in the browser
-and result (if any) is passed back to node runtime.
-
-Returns **[Array][70]** datalayer - an array of objects, each object is a tracking event
-
 ## ServicesPageTests
 
 Test suite for Service page.
@@ -354,29 +144,65 @@ Tests that Page title is correct.
 
 Tests that CTA buttons are visible.
 
-## Services
+## CrossPageTests
 
-**Extends Page**
+Test suite for Homepage -> Service cross page tests.
+Parametrized for all supported browsers.
 
-Class for Services page
+### before
 
-### url
+before hook - opens Homepage, accepts cookies and opens Services
+in the same window/tab of the browser.
+This hook runs only once.
 
-this page url
+### after
 
-### pageTitle
+after hook - closes the browser.
+This hook runs only once.
 
-this page title
+### ConsentBarNotDisplayed
 
-### ctaBttn
+Tests that cookie consent bar will not be displayed
 
-{object} information about CTA button elements
+## NetworkHomepageTests
 
-### getCtaBttnsElements
+Test suite for network traffict on Homepage.
+Parametrized for all supported browsers.
 
-returns Array of element handles of CTA bttns
+### before
 
-Returns **[Array][70]** element handles of CTA bttns
+before hook - starts browser and all that stuff.
+Starts network listener to check, if request to tested
+url returned with HTTP code 200
+
+### after
+
+after hook - closes browser
+
+### GTMLoadTest
+
+Tests, that Google GTM script, which is responsible for handling the tracking
+datalayer events and send them to GA was successfully loaded.
+
+## MobileHomepageTests
+
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][35] - why not Firefox**
+
+Test suite for mobile version of Homepage.
+Parametrized for chromium and webkit.
+
+### before
+
+before hook - ensures start browser with context of
+mobile device we are emulating
+
+### after
+
+after hook - closes browser
+
+### pageTitleIsCorrect
+
+Tests that page title of the mobile version of the homepage is correct
 
 [1]: #homepagecontactformtests
 
@@ -412,7 +238,7 @@ Returns **[Array][70]** element handles of CTA bttns
 
 [17]: #backgroundheadercolor
 
-[18]: #mobilehomepagetests
+[18]: #servicespagetests
 
 [19]: #before-3
 
@@ -420,100 +246,30 @@ Returns **[Array][70]** element handles of CTA bttns
 
 [21]: #pagetitleiscorrect-1
 
-[22]: #mobilehomepage
+[22]: #ctabuttonsvisible
 
-[23]: #url
+[23]: #crosspagetests
 
-[24]: #pagetitle
+[24]: #before-4
 
-[25]: #devicestotest
+[25]: #after-4
 
-[26]: #networkhomepagetests
+[26]: #consentbarnotdisplayed
 
-[27]: #before-4
+[27]: #networkhomepagetests
 
-[28]: #after-4
+[28]: #before-5
 
-[29]: #gtmloadtest
+[29]: #after-5
 
-[30]: #homepage
+[30]: #gtmloadtest
 
-[31]: #url-1
+[31]: #mobilehomepagetests
 
-[32]: #pagetitle-1
+[32]: #before-6
 
-[33]: #cookieconsentbar
+[33]: #after-6
 
-[34]: #headerbigbackgroundbar
+[34]: #pagetitleiscorrect-2
 
-[35]: #contactform
-
-[36]: #page
-
-[37]: #default
-
-[38]: #browser
-
-[39]: #context
-
-[40]: #page-1
-
-[41]: #browsers
-
-[42]: #gtmurl
-
-[43]: #launchbrowser
-
-[44]: #parameters
-
-[45]: #startnewcontext
-
-[46]: #opennewpage
-
-[47]: #openpage
-
-[48]: #parameters-1
-
-[49]: #closebrowser
-
-[50]: #closecontext
-
-[51]: #isvisible_
-
-[52]: #parameters-2
-
-[53]: #verifyelementstylecolor
-
-[54]: #parameters-3
-
-[55]: #getdatalayer
-
-[56]: #servicespagetests
-
-[57]: #before-5
-
-[58]: #after-5
-
-[59]: #pagetitleiscorrect-2
-
-[60]: #ctabuttonsvisible
-
-[61]: #services
-
-[62]: #url-2
-
-[63]: #pagetitle-2
-
-[64]: #ctabttn
-
-[65]: #getctabttnselements
-
-[66]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
-
-[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
-[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-
-[70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[35]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169

@@ -5,19 +5,19 @@
 -   [Homepage][1]
     -   [url][2]
     -   [pageTitle][3]
-    -   [cookieConsentBar][4]
-    -   [headerBigBackgroundBar][5]
-    -   [contactForm][6]
--   [MobileHomepage][7]
-    -   [url][8]
-    -   [pageTitle][9]
--   [page][10]
-    -   [default][11]
-        -   [browser][12]
-        -   [context][13]
-        -   [page][14]
-        -   [browsers][15]
-        -   [gtmUrl][16]
+    -   [headerBigBackgroundBar][4]
+    -   [contactForm][5]
+-   [MobileHomepage][6]
+    -   [url][7]
+    -   [pageTitle][8]
+-   [page][9]
+    -   [default][10]
+        -   [browser][11]
+        -   [context][12]
+        -   [page][13]
+        -   [browsers][14]
+        -   [gtmUrl][15]
+        -   [cookieConsentBar][16]
         -   [launchBrowser][17]
             -   [Parameters][18]
         -   [startNewContext][19]
@@ -50,10 +50,6 @@ this page url
 ### pageTitle
 
 this page title
-
-### cookieConsentBar
-
-{object} information about cookie consent bar
 
 ### headerBigBackgroundBar
 
@@ -107,6 +103,10 @@ browsers supporter by playwright
 #### gtmUrl
 
 GTM url of Tesena site
+
+#### cookieConsentBar
+
+{object} information about cookie consent bar
 
 #### launchBrowser
 
@@ -202,31 +202,31 @@ Returns **[Array][38]** element handles of CTA bttns
 
 [3]: #pagetitle
 
-[4]: #cookieconsentbar
+[4]: #headerbigbackgroundbar
 
-[5]: #headerbigbackgroundbar
+[5]: #contactform
 
-[6]: #contactform
+[6]: #mobilehomepage
 
-[7]: #mobilehomepage
+[7]: #url-1
 
-[8]: #url-1
+[8]: #pagetitle-1
 
-[9]: #pagetitle-1
+[9]: #page
 
-[10]: #page
+[10]: #default
 
-[11]: #default
+[11]: #browser
 
-[12]: #browser
+[12]: #context
 
-[13]: #context
+[13]: #page-1
 
-[14]: #page-1
+[14]: #browsers
 
-[15]: #browsers
+[15]: #gtmurl
 
-[16]: #gtmurl
+[16]: #cookieconsentbar
 
 [17]: #launchbrowser
 

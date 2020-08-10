@@ -29,6 +29,14 @@ module.exports.default = class Page {
   browsers = ["chromium", "firefox", "webkit"];
   /** GTM url of Tesena site */
   gtmUrl = "https://www.googletagmanager.com/gtm.js?id=GTM-KDG2FB9";
+  /** {object} information about cookie consent bar */
+  cookieConsentBar = {
+    loc: {
+      bar: '//div[@class="cookie-bar-wrapper"]',
+      acceptBttn:
+        '//div[@class="cookie-bar-wrapper"]//button[contains(@class, "btn-confirm")]',
+    },
+  };
 
   /**
    * Launches browser of given type as Playwright instance.
