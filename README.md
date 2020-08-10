@@ -58,8 +58,6 @@ npm update
   - [eslint](https://github.com/eslint/eslint) - to check, catch and remove errors, bugs. Has plugin in VScode
   - [prettier](https://github.com/prettier/prettier) - to keep code formatting consistent. Has plugin in VScode.
 
-- when creating PR in Github repository, add label `automerge`. If checks pass, your PR will be automatically merged to the master.
-
 ## Documentation
 
 Codebase (test files included) docs are generated via [Documentation.js](https://documentation.js.org/) tool. Check its documentation to figure out how to work with it, or use predefined npm scripts in `package.json`.
