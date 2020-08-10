@@ -31,7 +31,7 @@ Homepage.browsers.forEach(function (browser) {
 
     /**
      * Tests correct Page title.
-     * @function PageTitle
+     * @function PageTitleIsCorrect
      * @memberof HomepageTests
      */
     it(`page title is ${Homepage.pageTitle}`, async function () {

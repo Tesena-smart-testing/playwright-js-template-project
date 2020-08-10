@@ -9,24 +9,64 @@
     -   [afterEach][5]
     -   [FormIsVisible][6]
     -   [ErrorMessagesDisplayed][7]
--   [HomepageTests][8]
-    -   [before][9]
-    -   [after][10]
-    -   [PageTitle][11]
-    -   [ConsentBar][12]
-    -   [BackgroundHeaderColor][13]
+-   [Homepage][8]
+    -   [url][9]
+    -   [pageTitle][10]
+    -   [cookieConsentBar][11]
+    -   [headerBigBackgroundBar][12]
+    -   [contactForm][13]
 -   [DatalayerHomepageTests][14]
     -   [before][15]
     -   [after][16]
     -   [NonEmptyDatalayerIsPresent][17]
--   [NetworkHomepageTests][18]
+-   [HomepageTests][18]
     -   [before][19]
     -   [after][20]
-    -   [GTMLoadTest][21]
--   [MobileHomepageTests][22]
-    -   [before][23]
-    -   [after][24]
-    -   [pageTitleIsCorrect][25]
+    -   [PageTitleIsCorrect][21]
+    -   [ConsentBar][22]
+    -   [BackgroundHeaderColor][23]
+-   [MobileHomepageTests][24]
+    -   [before][25]
+    -   [after][26]
+    -   [pageTitleIsCorrect][27]
+-   [MobileHomepage][28]
+    -   [url][29]
+    -   [pageTitle][30]
+-   [devicesToTest][31]
+-   [NetworkHomepageTests][32]
+    -   [before][33]
+    -   [after][34]
+    -   [GTMLoadTest][35]
+-   [ServicesPageTests][36]
+    -   [before][37]
+    -   [after][38]
+    -   [PageTitleIsCorrect][39]
+    -   [CTAButtonsVisible][40]
+-   [Services][41]
+    -   [url][42]
+    -   [pageTitle][43]
+    -   [ctaBttn][44]
+    -   [getCtaBttnsElements][45]
+-   [page][46]
+    -   [default][47]
+        -   [browser][48]
+        -   [context][49]
+        -   [page][50]
+        -   [browsers][51]
+        -   [gtmUrl][52]
+        -   [launchBrowser][53]
+            -   [Parameters][54]
+        -   [startNewContext][55]
+        -   [openNewPage][56]
+        -   [openPage][57]
+            -   [Parameters][58]
+        -   [closeBrowser][59]
+        -   [closeContext][60]
+        -   [isVisible\_][61]
+            -   [Parameters][62]
+        -   [verifyElementStyleColor][63]
+            -   [Parameters][64]
+        -   [getDatalayer][65]
 
 ## HomepageContactFormTests
 
@@ -63,34 +103,31 @@ Tests, that the Contact Form element is visible.
 Tests, that error messages displayed for required fields
 if send action is attempted.
 
-## HomepageTests
+## Homepage
 
-Test suite for Homepage.
-Parametrized for all supported browsers.
+**Extends Page**
 
-### before
+Class for Homepage
 
-before hook - opens the browser, context and page
-and goes to page.url
-This hook is run once.
+### url
 
-### after
+this page url
 
-after hook - closes browser.
-Runs only once.
+### pageTitle
 
-### PageTitle
+this page title
 
-Tests correct Page title.
+### cookieConsentBar
 
-### ConsentBar
+{object} information about cookie consent bar
 
-Tests that consent bar is shown for new visitor.
+### headerBigBackgroundBar
 
-### BackgroundHeaderColor
+{object} information about header background
 
-Tests that background color of the big header is as
-specified by checking against color code in style attr.
+### contactForm
+
+{object} information about contact form
 
 ## DatalayerHomepageTests
 
@@ -112,6 +149,73 @@ This hook runs only once.
 Tests that dataLayer array object is present
 in the browser.window context and is not empty
 
+## HomepageTests
+
+Test suite for Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - opens the browser, context and page
+and goes to page.url
+This hook is run once.
+
+### after
+
+after hook - closes browser.
+Runs only once.
+
+### PageTitleIsCorrect
+
+Tests correct Page title.
+
+### ConsentBar
+
+Tests that consent bar is shown for new visitor.
+
+### BackgroundHeaderColor
+
+Tests that background color of the big header is as
+specified by checking against color code in style attr.
+
+## MobileHomepageTests
+
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][66] - why not Firefox**
+
+Test suite for mobile version of Homepage.
+Parametrized for chromium and webkit.
+
+### before
+
+before hook - ensures start browser with context of
+mobile device we are emulating
+
+### after
+
+after hook - closes browser
+
+### pageTitleIsCorrect
+
+Tests that page title of the mobile version of the homepage is correct
+
+## MobileHomepage
+
+**Extends Page**
+
+Page object for Mobile version of Homepage
+
+### url
+
+this page url
+
+### pageTitle
+
+this page title
+
+## devicesToTest
+
+Devices selected from playwright list of mobile devices available for browser emulation
+
 ## NetworkHomepageTests
 
 Test suite for network traffict on Homepage.
@@ -132,25 +236,147 @@ after hook - closes browser
 Tests, that Google GTM script, which is responsible for handling the tracking
 datalayer events and send them to GA was successfully loaded.
 
-## MobileHomepageTests
+## ServicesPageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][26] - why not Firefox**
-
-Test suite for mobile version of Homepage.
-Parametrized for chromium and webkit.
+Test suite for Service page.
+Parametrized for all supported browsers.
 
 ### before
 
-before hook - ensures start browser with context of
-mobile device we are emulating
+before hook - opens Services page.
+This hook runs only once.
 
 ### after
 
-after hook - closes browser
+after hook - closes browser.
+This hook runs only once.
 
-### pageTitleIsCorrect
+### PageTitleIsCorrect
 
-Tests that page title of the mobile version of the homepage is correct
+Tests that Page title is correct.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
+
+## Services
+
+**Extends Page**
+
+Class for Services page
+
+### url
+
+this page url
+
+### pageTitle
+
+this page title
+
+### ctaBttn
+
+{object} information about CTA button elements
+
+### getCtaBttnsElements
+
+returns Array of element handles of CTA bttns
+
+Returns **[Array][67]** element handles of CTA bttns
+
+## page
+
+Page module.
+Exports default 'Page' class, which is never instantiated itself,
+but always extended byt other Page Object classes.
+
+### default
+
+Export of class Page as default to be extended by other
+Page object classes.
+
+#### browser
+
+playwright browser instance
+
+#### context
+
+playwright browser context
+
+#### page
+
+playwright context page
+
+#### browsers
+
+browsers supporter by playwright
+
+#### gtmUrl
+
+GTM url of Tesena site
+
+#### launchBrowser
+
+Launches browser of given type as Playwright instance.
+
+##### Parameters
+
+-   `browser` **[string][68]** supported browser type, e.g. "chromium", "firefox", "webkit"
+
+#### startNewContext
+
+Starts new context in already running browser instance.
+
+#### openNewPage
+
+Opens new page in already existing browser context.
+
+#### openPage
+
+Launches Playwrights for given browser, starts new Context,
+opens new page and then loads website in that page
+
+##### Parameters
+
+-   `url` **[string][68]** url to open in page
+-   `browser` **[string][68]** supported browser type, e.g. "chromium", "firefox", "webkit"
+
+#### closeBrowser
+
+close Playwright browser object instance
+
+#### closeContext
+
+Close browser context. All pages in this context will be closed.
+Default context cannot be closed.
+
+#### isVisible\_
+
+Checks, if element is visible on the page by
+"abusing" elementHandle.scrollIntoViewIfNeeded() method
+
+##### Parameters
+
+-   `elementHandle` **[object][69]** elementHandle
+
+Returns **[boolean][70]** false, if is not visible, else undefined
+
+#### verifyElementStyleColor
+
+Checks, whether element specified style color is present in the element style attribute value
+
+##### Parameters
+
+-   `element` **[object][69]** elementHandle object returned from page
+-   `color` **[string][68]** color code to check, if present in the element style attribute value
+
+Returns **[boolean][70]** true, if color code is present, else false
+
+#### getDatalayer
+
+Get dataLayer array object from page context. Basically runs javascript code in the browser
+and result (if any) is passed back to node runtime.
+
+Returns **[Array][67]** datalayer - an array of objects, each object is a tracking event
 
 [1]: #homepagecontactformtests
 
@@ -166,40 +392,128 @@ Tests that page title of the mobile version of the homepage is correct
 
 [7]: #errormessagesdisplayed
 
-[8]: #homepagetests
+[8]: #homepage
 
-[9]: #before-1
+[9]: #url
 
-[10]: #after-1
+[10]: #pagetitle
 
-[11]: #pagetitle
+[11]: #cookieconsentbar
 
-[12]: #consentbar
+[12]: #headerbigbackgroundbar
 
-[13]: #backgroundheadercolor
+[13]: #contactform
 
 [14]: #datalayerhomepagetests
 
-[15]: #before-2
+[15]: #before-1
 
-[16]: #after-2
+[16]: #after-1
 
 [17]: #nonemptydatalayerispresent
 
-[18]: #networkhomepagetests
+[18]: #homepagetests
 
-[19]: #before-3
+[19]: #before-2
 
-[20]: #after-3
+[20]: #after-2
 
-[21]: #gtmloadtest
+[21]: #pagetitleiscorrect
 
-[22]: #mobilehomepagetests
+[22]: #consentbar
 
-[23]: #before-4
+[23]: #backgroundheadercolor
 
-[24]: #after-4
+[24]: #mobilehomepagetests
 
-[25]: #pagetitleiscorrect
+[25]: #before-3
 
-[26]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[26]: #after-3
+
+[27]: #pagetitleiscorrect-1
+
+[28]: #mobilehomepage
+
+[29]: #url-1
+
+[30]: #pagetitle-1
+
+[31]: #devicestotest
+
+[32]: #networkhomepagetests
+
+[33]: #before-4
+
+[34]: #after-4
+
+[35]: #gtmloadtest
+
+[36]: #servicespagetests
+
+[37]: #before-5
+
+[38]: #after-5
+
+[39]: #pagetitleiscorrect-2
+
+[40]: #ctabuttonsvisible
+
+[41]: #services
+
+[42]: #url-2
+
+[43]: #pagetitle-2
+
+[44]: #ctabttn
+
+[45]: #getctabttnselements
+
+[46]: #page
+
+[47]: #default
+
+[48]: #browser
+
+[49]: #context
+
+[50]: #page-1
+
+[51]: #browsers
+
+[52]: #gtmurl
+
+[53]: #launchbrowser
+
+[54]: #parameters
+
+[55]: #startnewcontext
+
+[56]: #opennewpage
+
+[57]: #openpage
+
+[58]: #parameters-1
+
+[59]: #closebrowser
+
+[60]: #closecontext
+
+[61]: #isvisible_
+
+[62]: #parameters-2
+
+[63]: #verifyelementstylecolor
+
+[64]: #parameters-3
+
+[65]: #getdatalayer
+
+[66]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+
+[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[68]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
