@@ -15,10 +15,14 @@
     -   [PageTitle][11]
     -   [ConsentBar][12]
     -   [BackgroundHeaderColor][13]
--   [MobileHomepageTests][14]
+-   [NetworkHomepageTests][14]
     -   [before][15]
     -   [after][16]
-    -   [pageTitleIsCorrect][17]
+    -   [GTMLoadTest][17]
+-   [MobileHomepageTests][18]
+    -   [before][19]
+    -   [after][20]
+    -   [pageTitleIsCorrect][21]
 
 ## HomepageContactFormTests
 
@@ -84,9 +88,29 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
+## NetworkHomepageTests
+
+Test suite for network traffict on Homepage.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - starts browser and all that stuff.
+Starts network listener to check, if request to tested
+url returned with HTTP code 200
+
+### after
+
+after hook - closes browser
+
+### GTMLoadTest
+
+Tests, that Google GTM script, which is responsible for handling the tracking
+datalayer events and send them to GA was successfully loaded.
+
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][18] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][22] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -130,12 +154,20 @@ Tests that page title of the mobile version of the homepage is correct
 
 [13]: #backgroundheadercolor
 
-[14]: #mobilehomepagetests
+[14]: #networkhomepagetests
 
 [15]: #before-2
 
 [16]: #after-2
 
-[17]: #pagetitleiscorrect
+[17]: #gtmloadtest
 
-[18]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[18]: #mobilehomepagetests
+
+[19]: #before-3
+
+[20]: #after-3
+
+[21]: #pagetitleiscorrect
+
+[22]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
