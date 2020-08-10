@@ -9,8 +9,8 @@ Homepage.browsers.forEach(function (browser) {
    */
   describe(`${browser}: Homepage tests`, function () {
     /**
-     * before hook - everything needed to set things up for tests
-     * themselves should be put here.
+     * before hook - opens the browser, context and page
+     * and goes to page.url
      * This hook is run once.
      * @function
      * @memberof HomepageTests
@@ -20,7 +20,7 @@ Homepage.browsers.forEach(function (browser) {
     });
 
     /**
-     * after hook - runs after all tests are done.
+     * after hook - closes browser.
      * Runs only once.
      * @function
      * @memberof HomepageTests
