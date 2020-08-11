@@ -22,28 +22,36 @@
     -   [CTAButtonsVisible][18]
 -   [HomepageTests][19]
     -   [before][20]
-    -   [after][21]
-    -   [afterEach][22]
-    -   [PageTitleIsCorrect][23]
-    -   [ConsentBar][24]
-    -   [BackgroundHeaderColor][25]
-    -   [HamburgerMenuNotVisible][26]
--   [CrossPageTests][27]
-    -   [before][28]
-    -   [after][29]
-    -   [afterEach][30]
-    -   [ConsentBarNotDisplayed][31]
--   [NetworkHomepageTests][32]
-    -   [before][33]
-    -   [after][34]
-    -   [afterEach][35]
-    -   [GTMLoadTest][36]
--   [MobileHomepageTests][37]
-    -   [before][38]
+    -   [before][21]
+    -   [after][22]
+    -   [afterEach][23]
+    -   [PageTitleIsCorrect][24]
+    -   [ConsentBar][25]
+    -   [BackgroundHeaderColor][26]
+    -   [HamburgerMenuNotVisible][27]
+-   [CrossPageTests][28]
+    -   [before][29]
+    -   [after][30]
+    -   [afterEach][31]
+    -   [ConsentBarNotDisplayed][32]
+-   [NetworkHomepageTests][33]
+    -   [before][34]
+    -   [after][35]
+    -   [afterEach][36]
+    -   [GTMLoadTest][37]
+-   [MultiLanguageHomepageTests][38]
     -   [after][39]
     -   [afterEach][40]
-    -   [pageTitleIsCorrect][41]
-    -   [hamburgerMenuIsVisible][42]
+    -   [PageTitleIsCorrect][41]
+    -   [ConsentBar][42]
+    -   [BackgroundHeaderColor][43]
+    -   [HamburgerMenuNotVisible][44]
+-   [MobileHomepageTests][45]
+    -   [before][46]
+    -   [after][47]
+    -   [afterEach][48]
+    -   [pageTitleIsCorrect][49]
+    -   [hamburgerMenuIsVisible][50]
 
 ## HomepageContactFormTests
 
@@ -142,6 +150,12 @@ before hook - opens the browser, context and page
 and goes to page.url
 This hook is run once.
 
+### before
+
+before hook - opens the browser, context and page
+and goes to page.url
+This hook is run once.
+
 ### after
 
 after hook - closes browser.
@@ -216,9 +230,41 @@ afterEach hook - saves screenshot, if test fail
 Tests, that Google GTM script, which is responsible for handling the tracking
 datalayer events and send them to GA was successfully loaded.
 
+## MultiLanguageHomepageTests
+
+Test suite for Homepage.
+Parametrized for all supported browsers.
+Parametrized for defined localizations - /en and /cs.
+
+### after
+
+after hook - closes browser.
+Runs only once.
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### PageTitleIsCorrect
+
+Tests correct Page title.
+
+### ConsentBar
+
+Tests that consent bar is shown for new visitor.
+
+### BackgroundHeaderColor
+
+Tests that background color of the big header is as
+specified by checking against color code in style attr.
+
+### HamburgerMenuNotVisible
+
+Tests that hamburger menu for mobile version is not displayed
+
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][43] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][51] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -284,41 +330,41 @@ Tests that hamburger menu on mobile version of page is visible
 
 [20]: #before-3
 
-[21]: #after-3
+[21]: #before-4
 
-[22]: #aftereach-3
+[22]: #after-3
 
-[23]: #pagetitleiscorrect-1
+[23]: #aftereach-3
 
-[24]: #consentbar
+[24]: #pagetitleiscorrect-1
 
-[25]: #backgroundheadercolor
+[25]: #consentbar
 
-[26]: #hamburgermenunotvisible
+[26]: #backgroundheadercolor
 
-[27]: #crosspagetests
+[27]: #hamburgermenunotvisible
 
-[28]: #before-4
+[28]: #crosspagetests
 
-[29]: #after-4
+[29]: #before-5
 
-[30]: #aftereach-4
+[30]: #after-4
 
-[31]: #consentbarnotdisplayed
+[31]: #aftereach-4
 
-[32]: #networkhomepagetests
+[32]: #consentbarnotdisplayed
 
-[33]: #before-5
+[33]: #networkhomepagetests
 
-[34]: #after-5
+[34]: #before-6
 
-[35]: #aftereach-5
+[35]: #after-5
 
-[36]: #gtmloadtest
+[36]: #aftereach-5
 
-[37]: #mobilehomepagetests
+[37]: #gtmloadtest
 
-[38]: #before-6
+[38]: #multilanguagehomepagetests
 
 [39]: #after-6
 
@@ -326,6 +372,22 @@ Tests that hamburger menu on mobile version of page is visible
 
 [41]: #pagetitleiscorrect-2
 
-[42]: #hamburgermenuisvisible
+[42]: #consentbar-1
 
-[43]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[43]: #backgroundheadercolor-1
+
+[44]: #hamburgermenunotvisible-1
+
+[45]: #mobilehomepagetests
+
+[46]: #before-7
+
+[47]: #after-7
+
+[48]: #aftereach-7
+
+[49]: #pagetitleiscorrect-3
+
+[50]: #hamburgermenuisvisible
+
+[51]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
