@@ -1,4 +1,5 @@
 const Homepage = require("../pageobjects/homepage.page");
+const MobileHomepage = require("../pageobjects/homepage.mobile.page");
 const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
 
@@ -79,6 +80,18 @@ Homepage.browsers.forEach(function (browser) {
           Homepage.headerBigBackgroundBar.color
         )
       ).to.be.true;
+    });
+
+    /**
+     * Tests that hamburger menu for mobile version is not displayed
+     * @function HamburgerMenuNotVisible
+     * @memberof HomepageTests
+     */
+    it("mobile hamburger menu is not visible", async function () {
+      const statusCheck = await Homepage.isVisible_(
+        MobileHomepage.hamburgerMenu.loc.menu
+      );
+      expect(statusCheck).to.be.false;
     });
   });
 });

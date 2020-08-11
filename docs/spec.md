@@ -14,35 +14,36 @@
     -   [afterEach][10]
     -   [after][11]
     -   [NonEmptyDatalayerIsPresent][12]
--   [HomepageTests][13]
+-   [ServicesPageTests][13]
     -   [before][14]
     -   [after][15]
     -   [afterEach][16]
     -   [PageTitleIsCorrect][17]
-    -   [ConsentBar][18]
-    -   [BackgroundHeaderColor][19]
--   [ServicesPageTests][20]
-    -   [before][21]
-    -   [after][22]
-    -   [afterEach][23]
-    -   [PageTitleIsCorrect][24]
-    -   [CTAButtonsVisible][25]
--   [CrossPageTests][26]
-    -   [before][27]
-    -   [after][28]
-    -   [afterEach][29]
-    -   [ConsentBarNotDisplayed][30]
--   [NetworkHomepageTests][31]
-    -   [before][32]
-    -   [after][33]
-    -   [afterEach][34]
-    -   [GTMLoadTest][35]
--   [MobileHomepageTests][36]
-    -   [before][37]
-    -   [after][38]
-    -   [afterEach][39]
-    -   [pageTitleIsCorrect][40]
-    -   [hamburgerMenuIsVisible][41]
+    -   [CTAButtonsVisible][18]
+-   [HomepageTests][19]
+    -   [before][20]
+    -   [after][21]
+    -   [afterEach][22]
+    -   [PageTitleIsCorrect][23]
+    -   [ConsentBar][24]
+    -   [BackgroundHeaderColor][25]
+    -   [HamburgerMenuNotVisible][26]
+-   [CrossPageTests][27]
+    -   [before][28]
+    -   [after][29]
+    -   [afterEach][30]
+    -   [ConsentBarNotDisplayed][31]
+-   [NetworkHomepageTests][32]
+    -   [before][33]
+    -   [after][34]
+    -   [afterEach][35]
+    -   [GTMLoadTest][36]
+-   [MobileHomepageTests][37]
+    -   [before][38]
+    -   [after][39]
+    -   [afterEach][40]
+    -   [pageTitleIsCorrect][41]
+    -   [hamburgerMenuIsVisible][42]
 
 ## HomepageContactFormTests
 
@@ -103,6 +104,33 @@ This hook runs only once.
 Tests that dataLayer array object is present
 in the browser.window context and is not empty
 
+## ServicesPageTests
+
+Test suite for Service page.
+Parametrized for all supported browsers.
+
+### before
+
+before hook - opens Services page.
+This hook runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### PageTitleIsCorrect
+
+Tests that Page title is correct.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
+
 ## HomepageTests
 
 Test suite for Homepage.
@@ -136,32 +164,9 @@ Tests that consent bar is shown for new visitor.
 Tests that background color of the big header is as
 specified by checking against color code in style attr.
 
-## ServicesPageTests
+### HamburgerMenuNotVisible
 
-Test suite for Service page.
-Parametrized for all supported browsers.
-
-### before
-
-before hook - opens Services page.
-This hook runs only once.
-
-### after
-
-after hook - closes browser.
-This hook runs only once.
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### PageTitleIsCorrect
-
-Tests that Page title is correct.
-
-### CTAButtonsVisible
-
-Tests that CTA buttons are visible.
+Tests that hamburger menu for mobile version is not displayed
 
 ## CrossPageTests
 
@@ -213,7 +218,7 @@ datalayer events and send them to GA was successfully loaded.
 
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][42] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][43] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -263,7 +268,7 @@ Tests that hamburger menu on mobile version of page is visible
 
 [12]: #nonemptydatalayerispresent
 
-[13]: #homepagetests
+[13]: #servicespagetests
 
 [14]: #before-2
 
@@ -273,52 +278,54 @@ Tests that hamburger menu on mobile version of page is visible
 
 [17]: #pagetitleiscorrect
 
-[18]: #consentbar
+[18]: #ctabuttonsvisible
 
-[19]: #backgroundheadercolor
+[19]: #homepagetests
 
-[20]: #servicespagetests
+[20]: #before-3
 
-[21]: #before-3
+[21]: #after-3
 
-[22]: #after-3
+[22]: #aftereach-3
 
-[23]: #aftereach-3
+[23]: #pagetitleiscorrect-1
 
-[24]: #pagetitleiscorrect-1
+[24]: #consentbar
 
-[25]: #ctabuttonsvisible
+[25]: #backgroundheadercolor
 
-[26]: #crosspagetests
+[26]: #hamburgermenunotvisible
 
-[27]: #before-4
+[27]: #crosspagetests
 
-[28]: #after-4
+[28]: #before-4
 
-[29]: #aftereach-4
+[29]: #after-4
 
-[30]: #consentbarnotdisplayed
+[30]: #aftereach-4
 
-[31]: #networkhomepagetests
+[31]: #consentbarnotdisplayed
 
-[32]: #before-5
+[32]: #networkhomepagetests
 
-[33]: #after-5
+[33]: #before-5
 
-[34]: #aftereach-5
+[34]: #after-5
 
-[35]: #gtmloadtest
+[35]: #aftereach-5
 
-[36]: #mobilehomepagetests
+[36]: #gtmloadtest
 
-[37]: #before-6
+[37]: #mobilehomepagetests
 
-[38]: #after-6
+[38]: #before-6
 
-[39]: #aftereach-6
+[39]: #after-6
 
-[40]: #pagetitleiscorrect-2
+[40]: #aftereach-6
 
-[41]: #hamburgermenuisvisible
+[41]: #pagetitleiscorrect-2
 
-[42]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[42]: #hamburgermenuisvisible
+
+[43]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
