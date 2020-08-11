@@ -4,11 +4,9 @@
 
 -   [devicesToTest][1]
 -   [Helpers][2]
-    -   [takeScreenshot][3]
-        -   [Parameters][4]
--   [Helpers][5]
-    -   [takeScreenshot][6]
-        -   [Parameters][7]
+    -   [Helpers][3]
+        -   [takeScreenshot][4]
+            -   [Parameters][5]
 
 ## devicesToTest
 
@@ -19,42 +17,34 @@ Devices selected from playwright list of mobile devices available for browser em
 Helpers module.
 Provides methods to be used across the project.
 
-### takeScreenshot
-
-#### Parameters
-
--   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][9]** `passed` or `failed`
--   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
-
-## Helpers
+### Helpers
 
 Class Helpers.
 
-### takeScreenshot
+#### takeScreenshot
 
-#### Parameters
+Takes .png screenshot of full page of `pageobject.page` instance and saves it
+to `process.cwd() + screenshots` directory.
 
--   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][9]** `passed` or `failed`
--   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+Filename is concat of expected test status, browser type, test title and `Date.now()`.
+
+##### Parameters
+
+-   `mochaInstance` **[object][6]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][6]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][7]** `passed` or `failed`
+-   `browser` **[string][7]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
 
 [1]: #devicestotest
 
 [2]: #helpers
 
-[3]: #takescreenshot
+[3]: #helpers-1
 
-[4]: #parameters
+[4]: #takescreenshot
 
-[5]: #helpers-1
+[5]: #parameters
 
-[6]: #takescreenshot-1
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[7]: #parameters-1
-
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
