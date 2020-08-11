@@ -1,4 +1,4 @@
-const MobileHomepage = require("../pageobjects/mobile.homepage.page");
+const MobileHomepage = require("../pageobjects/homepage.mobile.page");
 const Helpers = require("../helpers/helpers");
 const devicesToTest = require("../helpers/devices");
 const expect = require("chai").expect;
@@ -61,6 +61,18 @@ const devicesNames = Object.keys(devicesToTest);
       it(`${device}: page title is ${MobileHomepage.pageTitle}`, async function () {
         const title = await MobileHomepage.page.title();
         expect(title).equals(MobileHomepage.pageTitle);
+      });
+
+      /**
+       * Tests that hamburger menu on mobile version of page is visible
+       * @function hamburgerMenuIsVisible
+       * @memberof MobileHomepageTests
+       */
+      it(`${device}: hamburger menu is visible`, async function () {
+        const statusCheck = MobileHomepage.isVisible_(
+          MobileHomepage.hamburgerMenu.loc.menu
+        );
+        expect(statusCheck).not.to.be.false;
       });
     });
   });
