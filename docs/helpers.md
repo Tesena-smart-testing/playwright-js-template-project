@@ -2,13 +2,18 @@
 
 ### Table of Contents
 
--   [devicesToTest][1]
--   [Helpers][2]
-    -   [Helpers][3]
-        -   [takeScreenshot][4]
-            -   [Parameters][5]
+-   [Devices][1]
+    -   [devicesToTest][2]
+-   [Helpers][3]
+    -   [Helpers][4]
+        -   [takeScreenshot][5]
+            -   [Parameters][6]
 
-## devicesToTest
+## Devices
+
+Devices module.
+
+### devicesToTest
 
 Devices selected from playwright list of mobile devices available for browser emulation
 
@@ -30,21 +35,23 @@ Filename is concat of expected test status, browser type, test title and `Date.n
 
 ##### Parameters
 
--   `mochaInstance` **[object][6]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][6]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][7]** `passed` or `failed`
--   `browser` **[string][7]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+-   `mochaInstance` **[object][7]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][7]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][8]** `passed` or `failed`
+-   `browser` **[string][8]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
 
-[1]: #devicestotest
+[1]: #devices
 
-[2]: #helpers
+[2]: #devicestotest
 
-[3]: #helpers-1
+[3]: #helpers
 
-[4]: #takescreenshot
+[4]: #helpers-1
 
-[5]: #parameters
+[5]: #takescreenshot
 
-[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[6]: #parameters
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

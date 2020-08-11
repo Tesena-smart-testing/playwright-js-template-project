@@ -1,8 +1,15 @@
+/**
+ * Services module.
+ * @module Services
+ * @requires module:page.default
+ */
+
 const Page = require("./page").default;
 
 /**
  * Class for Services page
  * @class
+ * @memberof Services
  * @extends Page
  */
 class Services extends Page {
