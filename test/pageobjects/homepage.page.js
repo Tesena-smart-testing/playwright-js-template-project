@@ -18,6 +18,15 @@ class Homepage extends Page {
    */
   constructor() {
     super();
+
+    /** {object} locale values to allow for parametrized multi culture web testing, e.g. /en and /cs
+     * This could be also stored separately and loaded/required into the POP module.
+     */
+    this.locale = {
+      en: { url: "https://www.tesena.com/en", pageTitle: "Home — Tesena" },
+      cs: { url: "https://www.tesena.com/cs", pageTitle: "Home" },
+    };
+
     /** this page url */
     this.url = "https://www.tesena.com/en";
     /** this page title */

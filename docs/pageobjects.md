@@ -7,43 +7,44 @@
     -   [pageTitle][3]
     -   [MobileHomepage][4]
 -   [Homepage][5]
-    -   [url][6]
-    -   [pageTitle][7]
-    -   [headerBigBackgroundBar][8]
-    -   [contactForm][9]
-    -   [Homepage][10]
--   [MobilePage][11]
-    -   [hamburgerMenu][12]
-    -   [MobilePage][13]
--   [Page][14]
-    -   [default][15]
-        -   [browser][16]
-        -   [context][17]
-        -   [page][18]
-        -   [browsers][19]
-        -   [gtmUrl][20]
-        -   [cookieConsentBar][21]
-        -   [launchBrowser][22]
-            -   [Parameters][23]
-        -   [startNewContext][24]
-        -   [openNewPage][25]
-        -   [openPage][26]
-            -   [Parameters][27]
-        -   [closeBrowser][28]
-        -   [closeContext][29]
-        -   [isVisible\_][30]
-            -   [Parameters][31]
-        -   [verifyElementStyleColor][32]
-            -   [Parameters][33]
-        -   [getDatalayer][34]
-        -   [screenshot][35]
-            -   [Parameters][36]
--   [Services][37]
-    -   [url][38]
-    -   [pageTitle][39]
-    -   [ctaBttn][40]
-    -   [Services][41]
-        -   [getCtaBttnsElements][42]
+    -   [locale][6]
+    -   [url][7]
+    -   [pageTitle][8]
+    -   [headerBigBackgroundBar][9]
+    -   [contactForm][10]
+    -   [Homepage][11]
+-   [MobilePage][12]
+    -   [hamburgerMenu][13]
+    -   [MobilePage][14]
+-   [Page][15]
+    -   [default][16]
+        -   [browser][17]
+        -   [context][18]
+        -   [page][19]
+        -   [browsers][20]
+        -   [gtmUrl][21]
+        -   [cookieConsentBar][22]
+        -   [launchBrowser][23]
+            -   [Parameters][24]
+        -   [startNewContext][25]
+        -   [openNewPage][26]
+        -   [openPage][27]
+            -   [Parameters][28]
+        -   [closeBrowser][29]
+        -   [closeContext][30]
+        -   [isVisible\_][31]
+            -   [Parameters][32]
+        -   [verifyElementStyleColor][33]
+            -   [Parameters][34]
+        -   [getDatalayer][35]
+        -   [screenshot][36]
+            -   [Parameters][37]
+-   [Services][38]
+    -   [url][39]
+    -   [pageTitle][40]
+    -   [ctaBttn][41]
+    -   [Services][42]
+        -   [getCtaBttnsElements][43]
 
 ## MobileHomepage
 
@@ -66,6 +67,11 @@ Page object for Mobile version of Homepage
 ## Homepage
 
 Homepage module.
+
+### locale
+
+{object} locale values to allow for parametrized multi culture web testing, e.g. /en and /cs
+This could be also stored separately and loaded/required into the POP module.
 
 ### url
 
@@ -148,7 +154,7 @@ Launches browser of given type as Playwright instance.
 
 ##### Parameters
 
--   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `browser` **[string][44]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### startNewContext
 
@@ -165,8 +171,8 @@ opens new page and then loads website in that page
 
 ##### Parameters
 
--   `url` **[string][43]** url to open in page
--   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `url` **[string][44]** url to open in page
+-   `browser` **[string][44]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### closeBrowser
 
@@ -184,9 +190,9 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][44]** elementHandle
+-   `elementHandle` **[object][45]** elementHandle
 
-Returns **[boolean][45]** false, if is not visible, else undefined
+Returns **[boolean][46]** false, if is not visible, else undefined
 
 #### verifyElementStyleColor
 
@@ -194,17 +200,17 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][44]** elementHandle object returned from page
--   `color` **[string][43]** color code to check, if present in the element style attribute value
+-   `element` **[object][45]** elementHandle object returned from page
+-   `color` **[string][44]** color code to check, if present in the element style attribute value
 
-Returns **[boolean][45]** true, if color code is present, else false
+Returns **[boolean][46]** true, if color code is present, else false
 
 #### getDatalayer
 
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][46]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][47]** datalayer - an array of objects, each object is a tracking event
 
 #### screenshot
 
@@ -212,7 +218,7 @@ Takes screenshot of full page (not just viewport) and saves it.
 
 ##### Parameters
 
--   `filename` **[string][43]** intended filename with extension!
+-   `filename` **[string][44]** intended filename with extension!
 
 ## Services
 
@@ -240,7 +246,7 @@ Class for Services page
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][46]** element handles of CTA bttns
+Returns **[Array][47]** element handles of CTA bttns
 
 [1]: #mobilehomepage
 
@@ -252,84 +258,86 @@ Returns **[Array][46]** element handles of CTA bttns
 
 [5]: #homepage
 
-[6]: #url-1
+[6]: #locale
 
-[7]: #pagetitle-1
+[7]: #url-1
 
-[8]: #headerbigbackgroundbar
+[8]: #pagetitle-1
 
-[9]: #contactform
+[9]: #headerbigbackgroundbar
 
-[10]: #homepage-1
+[10]: #contactform
 
-[11]: #mobilepage
+[11]: #homepage-1
 
-[12]: #hamburgermenu
+[12]: #mobilepage
 
-[13]: #mobilepage-1
+[13]: #hamburgermenu
 
-[14]: #page
+[14]: #mobilepage-1
 
-[15]: #default
+[15]: #page
 
-[16]: #browser
+[16]: #default
 
-[17]: #context
+[17]: #browser
 
-[18]: #page-1
+[18]: #context
 
-[19]: #browsers
+[19]: #page-1
 
-[20]: #gtmurl
+[20]: #browsers
 
-[21]: #cookieconsentbar
+[21]: #gtmurl
 
-[22]: #launchbrowser
+[22]: #cookieconsentbar
 
-[23]: #parameters
+[23]: #launchbrowser
 
-[24]: #startnewcontext
+[24]: #parameters
 
-[25]: #opennewpage
+[25]: #startnewcontext
 
-[26]: #openpage
+[26]: #opennewpage
 
-[27]: #parameters-1
+[27]: #openpage
 
-[28]: #closebrowser
+[28]: #parameters-1
 
-[29]: #closecontext
+[29]: #closebrowser
 
-[30]: #isvisible_
+[30]: #closecontext
 
-[31]: #parameters-2
+[31]: #isvisible_
 
-[32]: #verifyelementstylecolor
+[32]: #parameters-2
 
-[33]: #parameters-3
+[33]: #verifyelementstylecolor
 
-[34]: #getdatalayer
+[34]: #parameters-3
 
-[35]: #screenshot
+[35]: #getdatalayer
 
-[36]: #parameters-4
+[36]: #screenshot
 
-[37]: #services
+[37]: #parameters-4
 
-[38]: #url-2
+[38]: #services
 
-[39]: #pagetitle-2
+[39]: #url-2
 
-[40]: #ctabttn
+[40]: #pagetitle-2
 
-[41]: #services-1
+[41]: #ctabttn
 
-[42]: #getctabttnselements
+[42]: #services-1
 
-[43]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[43]: #getctabttnselements
 
-[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[45]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[45]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[47]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
