@@ -1,8 +1,15 @@
+/**
+ * Homepage module.
+ * @module Homepage
+ * @requires module:page.default
+ */
+
 const Page = require("./page").default;
 
 /**
  * Class for Homepage
  * @class
+ * @memberof Homepage
  * @extends Page
  */
 class Homepage extends Page {

@@ -2,15 +2,18 @@
 
 ### Table of Contents
 
--   [devicesToTest][1]
--   [Helpers][2]
-    -   [takeScreenshot][3]
-        -   [Parameters][4]
--   [Helpers][5]
-    -   [takeScreenshot][6]
-        -   [Parameters][7]
+-   [Devices][1]
+    -   [devicesToTest][2]
+-   [Helpers][3]
+    -   [Helpers][4]
+        -   [takeScreenshot][5]
+            -   [Parameters][6]
 
-## devicesToTest
+## Devices
+
+Devices module.
+
+### devicesToTest
 
 Devices selected from playwright list of mobile devices available for browser emulation
 
@@ -19,42 +22,36 @@ Devices selected from playwright list of mobile devices available for browser em
 Helpers module.
 Provides methods to be used across the project.
 
-### takeScreenshot
-
-#### Parameters
-
--   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][9]** `passed` or `failed`
--   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
-
-## Helpers
+### Helpers
 
 Class Helpers.
 
-### takeScreenshot
+#### takeScreenshot
 
-#### Parameters
+Takes .png screenshot of full page of `pageobject.page` instance and saves it
+to `process.cwd() + screenshots` directory.
 
--   `mochaInstance` **[object][8]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][8]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][9]** `passed` or `failed`
--   `browser` **[string][9]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+Filename is concat of expected test status, browser type, test title and `Date.now()`.
 
-[1]: #devicestotest
+##### Parameters
 
-[2]: #helpers
+-   `mochaInstance` **[object][7]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][7]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][8]** `passed` or `failed`
+-   `browser` **[string][8]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
 
-[3]: #takescreenshot
+[1]: #devices
 
-[4]: #parameters
+[2]: #devicestotest
 
-[5]: #helpers-1
+[3]: #helpers
 
-[6]: #takescreenshot-1
+[4]: #helpers-1
 
-[7]: #parameters-1
+[5]: #takescreenshot
 
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[6]: #parameters
 
-[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

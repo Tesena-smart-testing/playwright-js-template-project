@@ -2,7 +2,7 @@
  * Page module.
  * Exports default 'Page' class, which is never instantiated itself,
  * but always extended byt other Page Object classes.
- * @module
+ * @module Page
  */
 
 const Playwright = require("playwright");
@@ -13,6 +13,7 @@ const fs = require("fs");
  * Export of class Page as default to be extended by other
  * Page object classes.
  * @exports
+ * @memberof Page
  */
 module.exports.default = class Page {
   // eslint does not like this

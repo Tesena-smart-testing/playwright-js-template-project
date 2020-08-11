@@ -7,10 +7,16 @@
 /**
  * Class Helpers.
  * @class
+ * @memberof Helpers
  */
 class Helpers {
   /**
+   * Takes .png screenshot of full page of `pageobject.page` instance and saves it
+   * to `process.cwd() + screenshots` directory.
    *
+   * Filename is concat of expected test status, browser type, test title and `Date.now()`.
+   * @method
+   * @async
    * @param {object} mochaInstance instance of the mocha test runner, i.e. `this`
    * @param {object} pageobject instance of the pageobject class, i.e. `Homepage`
    * @param {string} expectedTestStatus `passed` or `failed`
