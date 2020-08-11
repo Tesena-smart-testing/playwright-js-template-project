@@ -10,7 +10,7 @@ const MobilePage = require("../pageobjects/mobile.page");
  * Page object for Mobile version of Homepage
  * @class
  * @memberof MobileHomepage
- * @extends Page
+ * @extends MobilePage
  */
 class MobileHomepage extends MobilePage {
   /**

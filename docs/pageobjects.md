@@ -59,7 +59,7 @@ this page title
 
 ### MobileHomepage
 
-**Extends Page**
+**Extends MobilePage**
 
 Page object for Mobile version of Homepage
 
