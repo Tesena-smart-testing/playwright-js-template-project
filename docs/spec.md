@@ -42,6 +42,7 @@
     -   [after][38]
     -   [afterEach][39]
     -   [pageTitleIsCorrect][40]
+    -   [hamburgerMenuIsVisible][41]
 
 ## HomepageContactFormTests
 
@@ -212,7 +213,7 @@ datalayer events and send them to GA was successfully loaded.
 
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][41] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][42] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -233,6 +234,10 @@ afterEach hook - saves screenshot, if test fail
 ### pageTitleIsCorrect
 
 Tests that page title of the mobile version of the homepage is correct
+
+### hamburgerMenuIsVisible
+
+Tests that hamburger menu on mobile version of page is visible
 
 [1]: #homepagecontactformtests
 
@@ -314,4 +319,6 @@ Tests that page title of the mobile version of the homepage is correct
 
 [40]: #pagetitleiscorrect-2
 
-[41]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[41]: #hamburgermenuisvisible
+
+[42]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169

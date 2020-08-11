@@ -1,10 +1,10 @@
 /**
  * MobileHomepage module
  * @module MobileHomepage
- * @requires module:page.default
+ * @requires module:MobilePage
  */
 
-const Page = require("./page").default;
+const MobilePage = require("../pageobjects/mobile.page");
 
 /**
  * Page object for Mobile version of Homepage
@@ -12,7 +12,7 @@ const Page = require("./page").default;
  * @memberof MobileHomepage
  * @extends Page
  */
-class MobileHomepage extends Page {
+class MobileHomepage extends MobilePage {
   /**
    * @constructor
    */
