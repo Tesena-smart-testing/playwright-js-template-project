@@ -16,42 +16,58 @@
     -   [NonEmptyDatalayerIsPresent][12]
 -   [ServicesPageTests][13]
     -   [before][14]
-    -   [after][15]
-    -   [afterEach][16]
-    -   [PageTitleIsCorrect][17]
-    -   [CTAButtonsVisible][18]
--   [HomepageTests][19]
-    -   [before][20]
-    -   [before][21]
-    -   [after][22]
-    -   [afterEach][23]
-    -   [PageTitleIsCorrect][24]
-    -   [ConsentBar][25]
-    -   [BackgroundHeaderColor][26]
-    -   [HamburgerMenuNotVisible][27]
--   [CrossPageTests][28]
-    -   [before][29]
-    -   [after][30]
-    -   [afterEach][31]
-    -   [ConsentBarNotDisplayed][32]
--   [NetworkHomepageTests][33]
-    -   [before][34]
-    -   [after][35]
-    -   [afterEach][36]
-    -   [GTMLoadTest][37]
--   [MultiLanguageHomepageTests][38]
-    -   [after][39]
-    -   [afterEach][40]
-    -   [PageTitleIsCorrect][41]
-    -   [ConsentBar][42]
-    -   [BackgroundHeaderColor][43]
-    -   [HamburgerMenuNotVisible][44]
--   [MobileHomepageTests][45]
-    -   [before][46]
-    -   [after][47]
-    -   [afterEach][48]
-    -   [pageTitleIsCorrect][49]
-    -   [hamburgerMenuIsVisible][50]
+    -   [before][15]
+    -   [after][16]
+    -   [after][17]
+    -   [afterEach][18]
+    -   [afterEach][19]
+    -   [PageTitleIsCorrect][20]
+    -   [PageTitleIsCorrect][21]
+    -   [CTAButtonsVisible][22]
+    -   [CTAButtonsVisible][23]
+-   [ServicesPageTests][24]
+    -   [before][25]
+    -   [before][26]
+    -   [after][27]
+    -   [after][28]
+    -   [afterEach][29]
+    -   [afterEach][30]
+    -   [PageTitleIsCorrect][31]
+    -   [PageTitleIsCorrect][32]
+    -   [CTAButtonsVisible][33]
+    -   [CTAButtonsVisible][34]
+-   [HomepageTests][35]
+    -   [before][36]
+    -   [before][37]
+    -   [after][38]
+    -   [afterEach][39]
+    -   [PageTitleIsCorrect][40]
+    -   [ConsentBar][41]
+    -   [BackgroundHeaderColor][42]
+    -   [HamburgerMenuNotVisible][43]
+-   [CrossPageTests][44]
+    -   [before][45]
+    -   [after][46]
+    -   [afterEach][47]
+    -   [ConsentBarNotDisplayed][48]
+-   [NetworkHomepageTests][49]
+    -   [before][50]
+    -   [after][51]
+    -   [afterEach][52]
+    -   [GTMLoadTest][53]
+-   [MultiLanguageHomepageTests][54]
+    -   [after][55]
+    -   [afterEach][56]
+    -   [PageTitleIsCorrect][57]
+    -   [ConsentBar][58]
+    -   [BackgroundHeaderColor][59]
+    -   [HamburgerMenuNotVisible][60]
+-   [MobileHomepageTests][61]
+    -   [before][62]
+    -   [after][63]
+    -   [afterEach][64]
+    -   [pageTitleIsCorrect][65]
+    -   [hamburgerMenuIsVisible][66]
 
 ## HomepageContactFormTests
 
@@ -122,6 +138,16 @@ Parametrized for all supported browsers.
 before hook - opens Services page.
 This hook runs only once.
 
+### before
+
+before hook - opens Services page.
+This hook runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
 ### after
 
 after hook - closes browser.
@@ -131,9 +157,71 @@ This hook runs only once.
 
 afterEach hook - saves screenshot, if test fail
 
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
 ### PageTitleIsCorrect
 
 Tests that Page title is correct.
+
+### PageTitleIsCorrect
+
+Tests that Page title is correct.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
+
+## ServicesPageTests
+
+Test suite for Service page.
+Parametrized for all supported browsers.
+Parametrized for defined localizations - /en and /cs.
+
+### before
+
+before hook - opens Services page.
+This hook runs only once.
+
+### before
+
+before hook - opens Services page.
+This hook runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### after
+
+after hook - closes browser.
+This hook runs only once.
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### PageTitleIsCorrect
+
+Tests that Page title is correct.
+
+### PageTitleIsCorrect
+
+Tests that Page title is correct.
+
+### CTAButtonsVisible
+
+Tests that CTA buttons are visible.
 
 ### CTAButtonsVisible
 
@@ -264,7 +352,7 @@ Tests that hamburger menu for mobile version is not displayed
 
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][51] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][67] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -318,76 +406,108 @@ Tests that hamburger menu on mobile version of page is visible
 
 [14]: #before-2
 
-[15]: #after-2
+[15]: #before-3
 
-[16]: #aftereach-2
+[16]: #after-2
 
-[17]: #pagetitleiscorrect
+[17]: #after-3
 
-[18]: #ctabuttonsvisible
+[18]: #aftereach-2
 
-[19]: #homepagetests
+[19]: #aftereach-3
 
-[20]: #before-3
+[20]: #pagetitleiscorrect
 
-[21]: #before-4
+[21]: #pagetitleiscorrect-1
 
-[22]: #after-3
+[22]: #ctabuttonsvisible
 
-[23]: #aftereach-3
+[23]: #ctabuttonsvisible-1
 
-[24]: #pagetitleiscorrect-1
+[24]: #servicespagetests-1
 
-[25]: #consentbar
+[25]: #before-4
 
-[26]: #backgroundheadercolor
+[26]: #before-5
 
-[27]: #hamburgermenunotvisible
+[27]: #after-4
 
-[28]: #crosspagetests
+[28]: #after-5
 
-[29]: #before-5
+[29]: #aftereach-4
 
-[30]: #after-4
+[30]: #aftereach-5
 
-[31]: #aftereach-4
+[31]: #pagetitleiscorrect-2
 
-[32]: #consentbarnotdisplayed
+[32]: #pagetitleiscorrect-3
 
-[33]: #networkhomepagetests
+[33]: #ctabuttonsvisible-2
 
-[34]: #before-6
+[34]: #ctabuttonsvisible-3
 
-[35]: #after-5
+[35]: #homepagetests
 
-[36]: #aftereach-5
+[36]: #before-6
 
-[37]: #gtmloadtest
+[37]: #before-7
 
-[38]: #multilanguagehomepagetests
+[38]: #after-6
 
-[39]: #after-6
+[39]: #aftereach-6
 
-[40]: #aftereach-6
+[40]: #pagetitleiscorrect-4
 
-[41]: #pagetitleiscorrect-2
+[41]: #consentbar
 
-[42]: #consentbar-1
+[42]: #backgroundheadercolor
 
-[43]: #backgroundheadercolor-1
+[43]: #hamburgermenunotvisible
 
-[44]: #hamburgermenunotvisible-1
+[44]: #crosspagetests
 
-[45]: #mobilehomepagetests
+[45]: #before-8
 
-[46]: #before-7
+[46]: #after-7
 
-[47]: #after-7
+[47]: #aftereach-7
 
-[48]: #aftereach-7
+[48]: #consentbarnotdisplayed
 
-[49]: #pagetitleiscorrect-3
+[49]: #networkhomepagetests
 
-[50]: #hamburgermenuisvisible
+[50]: #before-9
 
-[51]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[51]: #after-8
+
+[52]: #aftereach-8
+
+[53]: #gtmloadtest
+
+[54]: #multilanguagehomepagetests
+
+[55]: #after-9
+
+[56]: #aftereach-9
+
+[57]: #pagetitleiscorrect-5
+
+[58]: #consentbar-1
+
+[59]: #backgroundheadercolor-1
+
+[60]: #hamburgermenunotvisible-1
+
+[61]: #mobilehomepagetests
+
+[62]: #before-10
+
+[63]: #after-10
+
+[64]: #aftereach-10
+
+[65]: #pagetitleiscorrect-6
+
+[66]: #hamburgermenuisvisible
+
+[67]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
