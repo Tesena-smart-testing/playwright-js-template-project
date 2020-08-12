@@ -112,16 +112,15 @@ module.exports.default = class Page {
    * @method
    * @async
    * @param {object} elementHandle elementHandle
-   * @returns {boolean} false, if is not visible, else undefined
+   * @returns {boolean} false, if is not visible, else true
    */
   async isVisible_(elementHandle) {
-    let flag;
     try {
       await elementHandle.scrollIntoViewIfNeeded();
     } catch (error) {
-      flag = false;
+      return false;
     }
-    return flag;
+    return true;
   }
 
   /**

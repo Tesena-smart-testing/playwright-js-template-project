@@ -22,6 +22,8 @@ Page.browsers.forEach(function (browser) {
     before(async function () {
       await Page.openPage(Page.url, browser);
       await Page.page.click(Page.cookieConsentBar.loc.acceptBttn);
+      // cookie needs to be saved
+      await Page.page.waitForTimeout(3000);
       await Page.page.goto(Services.url);
       await Page.page.waitForLoadState("networkidle");
     });
@@ -51,10 +53,10 @@ Page.browsers.forEach(function (browser) {
      * @memberof CrossPageTests
      */
     it(`cookie consent bar is not displayed`, async function () {
-      const checkResult = Services.isVisible_(
+      const checkResult = await Services.isVisible_(
         Services.cookieConsentBar.loc.bar
       );
-      expect(checkResult).not.to.be.false;
+      expect(checkResult).to.be.false;
     });
   });
 });
