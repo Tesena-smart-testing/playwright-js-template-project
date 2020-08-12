@@ -8,6 +8,9 @@
     -   [Helpers][4]
         -   [takeScreenshot][5]
             -   [Parameters][6]
+-   [Localization][7]
+    -   [localeHomepage][8]
+    -   [localeServices][9]
 
 ## Devices
 
@@ -35,10 +38,22 @@ Filename is concat of expected test status, browser type, test title and `Date.n
 
 ##### Parameters
 
--   `mochaInstance` **[object][7]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][7]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][8]** `passed` or `failed`
--   `browser` **[string][8]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+-   `mochaInstance` **[object][10]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][10]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][11]** `passed` or `failed`
+-   `browser` **[string][11]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
 
 [1]: #devices
 
@@ -52,6 +67,12 @@ Filename is concat of expected test status, browser type, test title and `Date.n
 
 [6]: #parameters
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[7]: #localization
 
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[8]: #localehomepage
+
+[9]: #localeservices
+
+[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

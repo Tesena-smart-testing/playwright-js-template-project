@@ -2,9 +2,11 @@
  * Services module.
  * @module Services
  * @requires module:page.default
+ * @requires module:localization.localeServices
  */
 
 const Page = require("./page").default;
+const { localeServices } = require("../helpers/localization");
 
 /**
  * Class for Services page
@@ -18,6 +20,10 @@ class Services extends Page {
    */
   constructor() {
     super();
+    /** {object} localization values to allow for parametrized multi
+     *  culture web testing, e.g. /en and /cs
+     */
+    this.locale = localeServices;
     /** this page url */
     this.url = "https://www.tesena.com/en/services";
     /** this page title */

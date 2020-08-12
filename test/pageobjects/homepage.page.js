@@ -2,9 +2,11 @@
  * Homepage module.
  * @module Homepage
  * @requires module:page.default
+ * @requires module:localization.localeHomepage
  */
 
 const Page = require("./page").default;
+const { localeHomepage } = require("../helpers/localization");
 
 /**
  * Class for Homepage
@@ -19,14 +21,9 @@ class Homepage extends Page {
   constructor() {
     super();
 
-    /** {object} locale values to allow for parametrized multi culture web testing, e.g. /en and /cs
-     * This could be also stored separately and loaded/required into the POP module.
+    /** {object} localization values to allow for parametrized multi culture web testing, e.g. /en and /cs
      */
-    this.locale = {
-      en: { url: "https://www.tesena.com/en", pageTitle: "Home — Tesena" },
-      cs: { url: "https://www.tesena.com/cs", pageTitle: "Home" },
-    };
-
+    this.locale = localeHomepage;
     /** this page url */
     this.url = "https://www.tesena.com/en";
     /** this page title */

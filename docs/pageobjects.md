@@ -40,11 +40,15 @@
         -   [screenshot][36]
             -   [Parameters][37]
 -   [Services][38]
-    -   [url][39]
-    -   [pageTitle][40]
-    -   [ctaBttn][41]
-    -   [Services][42]
-        -   [getCtaBttnsElements][43]
+    -   [locale][39]
+    -   [url][40]
+    -   [pageTitle][41]
+    -   [ctaBttn][42]
+    -   [Services][43]
+        -   [getCtaBttnsElements][44]
+-   [Localization][45]
+    -   [localeHomepage][46]
+    -   [localeServices][47]
 
 ## MobileHomepage
 
@@ -70,8 +74,7 @@ Homepage module.
 
 ### locale
 
-{object} locale values to allow for parametrized multi culture web testing, e.g. /en and /cs
-This could be also stored separately and loaded/required into the POP module.
+{object} localization values to allow for parametrized multi culture web testing, e.g. /en and /cs
 
 ### url
 
@@ -154,7 +157,7 @@ Launches browser of given type as Playwright instance.
 
 ##### Parameters
 
--   `browser` **[string][44]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `browser` **[string][48]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### startNewContext
 
@@ -171,8 +174,8 @@ opens new page and then loads website in that page
 
 ##### Parameters
 
--   `url` **[string][44]** url to open in page
--   `browser` **[string][44]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `url` **[string][48]** url to open in page
+-   `browser` **[string][48]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### closeBrowser
 
@@ -190,9 +193,9 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][45]** elementHandle
+-   `elementHandle` **[object][49]** elementHandle
 
-Returns **[boolean][46]** false, if is not visible, else undefined
+Returns **[boolean][50]** false, if is not visible, else undefined
 
 #### verifyElementStyleColor
 
@@ -200,17 +203,17 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][45]** elementHandle object returned from page
--   `color` **[string][44]** color code to check, if present in the element style attribute value
+-   `element` **[object][49]** elementHandle object returned from page
+-   `color` **[string][48]** color code to check, if present in the element style attribute value
 
-Returns **[boolean][46]** true, if color code is present, else false
+Returns **[boolean][50]** true, if color code is present, else false
 
 #### getDatalayer
 
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][47]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][51]** datalayer - an array of objects, each object is a tracking event
 
 #### screenshot
 
@@ -218,11 +221,16 @@ Takes screenshot of full page (not just viewport) and saves it.
 
 ##### Parameters
 
--   `filename` **[string][44]** intended filename with extension!
+-   `filename` **[string][48]** intended filename with extension!
 
 ## Services
 
 Services module.
+
+### locale
+
+{object} localization values to allow for parametrized multi
+ culture web testing, e.g. /en and /cs
 
 ### url
 
@@ -246,7 +254,19 @@ Class for Services page
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][47]** element handles of CTA bttns
+Returns **[Array][51]** element handles of CTA bttns
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
 
 [1]: #mobilehomepage
 
@@ -324,20 +344,28 @@ Returns **[Array][47]** element handles of CTA bttns
 
 [38]: #services
 
-[39]: #url-2
+[39]: #locale-1
 
-[40]: #pagetitle-2
+[40]: #url-2
 
-[41]: #ctabttn
+[41]: #pagetitle-2
 
-[42]: #services-1
+[42]: #ctabttn
 
-[43]: #getctabttnselements
+[43]: #services-1
 
-[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[44]: #getctabttnselements
 
-[45]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[45]: #localization
 
-[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[46]: #localehomepage
 
-[47]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[47]: #localeservices
+
+[48]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[49]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[50]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
