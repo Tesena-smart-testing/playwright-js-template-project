@@ -24,10 +24,6 @@ class Services extends Page {
      *  culture web testing, e.g. /en and /cs
      */
     this.locale = localeServices;
-    /** this page url */
-    this.url = "https://www.tesena.com/en/services";
-    /** this page title */
-    this.pageTitle = "Services — Tesena";
     /** {object} information about CTA button elements */
     this.ctaBttn = { loc: '//a[@class="btn btn-default"]' };
   }

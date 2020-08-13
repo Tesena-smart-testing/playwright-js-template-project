@@ -16,63 +16,40 @@
     -   [NonEmptyDatalayerIsPresent][12]
 -   [ServicesPageTests][13]
     -   [before][14]
-    -   [before][15]
-    -   [after][16]
-    -   [after][17]
-    -   [afterEach][18]
-    -   [afterEach][19]
-    -   [PageTitleIsCorrect][20]
-    -   [PageTitleIsCorrect][21]
-    -   [CTAButtonsVisible][22]
-    -   [CTAButtonsVisible][23]
--   [ServicesPageTests][24]
-    -   [before][25]
-    -   [before][26]
-    -   [after][27]
+    -   [after][15]
+    -   [afterEach][16]
+    -   [PageTitleIsCorrect][17]
+    -   [CTAButtonsVisible][18]
+-   [MultiLanguageHomepageTests][19]
+    -   [after][20]
+    -   [afterEach][21]
+    -   [PageTitleIsCorrect][22]
+    -   [ConsentBar][23]
+    -   [BackgroundHeaderColor][24]
+    -   [HamburgerMenuNotVisible][25]
+-   [NetworkHomepageTests][26]
+    -   [before][27]
     -   [after][28]
     -   [afterEach][29]
-    -   [afterEach][30]
-    -   [PageTitleIsCorrect][31]
-    -   [PageTitleIsCorrect][32]
-    -   [CTAButtonsVisible][33]
-    -   [CTAButtonsVisible][34]
--   [HomepageTests][35]
-    -   [before][36]
+    -   [GTMLoadTest][30]
+-   [CrossPageTests][31]
+    -   [before][32]
+    -   [after][33]
+    -   [afterEach][34]
+    -   [ConsentBarNotDisplayed][35]
+-   [MobileHomepageTests][36]
     -   [before][37]
     -   [after][38]
     -   [afterEach][39]
-    -   [PageTitleIsCorrect][40]
-    -   [ConsentBar][41]
-    -   [BackgroundHeaderColor][42]
-    -   [HamburgerMenuNotVisible][43]
--   [CrossPageTests][44]
-    -   [before][45]
-    -   [after][46]
-    -   [afterEach][47]
-    -   [ConsentBarNotDisplayed][48]
--   [NetworkHomepageTests][49]
-    -   [before][50]
-    -   [after][51]
-    -   [afterEach][52]
-    -   [GTMLoadTest][53]
--   [MultiLanguageHomepageTests][54]
-    -   [after][55]
-    -   [afterEach][56]
-    -   [PageTitleIsCorrect][57]
-    -   [ConsentBar][58]
-    -   [BackgroundHeaderColor][59]
-    -   [HamburgerMenuNotVisible][60]
--   [MobileHomepageTests][61]
-    -   [before][62]
-    -   [after][63]
-    -   [afterEach][64]
-    -   [pageTitleIsCorrect][65]
-    -   [hamburgerMenuIsVisible][66]
+    -   [pageTitleIsCorrect][40]
+    -   [hamburgerMenuIsVisible][41]
+-   [before][42]
 
 ## HomepageContactFormTests
 
 Test suite for Contact Form in Homepage.
 Parametrized for all supported browsers.
+Parametrized for published languages.
 
 ### before
 
@@ -108,6 +85,7 @@ if send action is attempted.
 
 Test suite for dataLayer tests on Homepage.
 Parametrized for all supported browsers.
+Parametrized for published languages.
 
 ### before
 
@@ -132,55 +110,6 @@ in the browser.window context and is not empty
 
 Test suite for Service page.
 Parametrized for all supported browsers.
-
-### before
-
-before hook - opens Services page.
-This hook runs only once.
-
-### before
-
-before hook - opens Services page.
-This hook runs only once.
-
-### after
-
-after hook - closes browser.
-This hook runs only once.
-
-### after
-
-after hook - closes browser.
-This hook runs only once.
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### PageTitleIsCorrect
-
-Tests that Page title is correct.
-
-### PageTitleIsCorrect
-
-Tests that Page title is correct.
-
-### CTAButtonsVisible
-
-Tests that CTA buttons are visible.
-
-### CTAButtonsVisible
-
-Tests that CTA buttons are visible.
-
-## ServicesPageTests
-
-Test suite for Service page.
-Parametrized for all supported browsers.
 Parametrized for defined localizations - /en and /cs.
 
 ### before
@@ -188,24 +117,10 @@ Parametrized for defined localizations - /en and /cs.
 before hook - opens Services page.
 This hook runs only once.
 
-### before
-
-before hook - opens Services page.
-This hook runs only once.
-
 ### after
 
 after hook - closes browser.
 This hook runs only once.
-
-### after
-
-after hook - closes browser.
-This hook runs only once.
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
 
 ### afterEach
 
@@ -215,108 +130,9 @@ afterEach hook - saves screenshot, if test fail
 
 Tests that Page title is correct.
 
-### PageTitleIsCorrect
-
-Tests that Page title is correct.
-
 ### CTAButtonsVisible
 
 Tests that CTA buttons are visible.
-
-### CTAButtonsVisible
-
-Tests that CTA buttons are visible.
-
-## HomepageTests
-
-Test suite for Homepage.
-Parametrized for all supported browsers.
-
-### before
-
-before hook - opens the browser, context and page
-and goes to page.url
-This hook is run once.
-
-### before
-
-before hook - opens the browser, context and page
-and goes to page.url
-This hook is run once.
-
-### after
-
-after hook - closes browser.
-Runs only once.
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### PageTitleIsCorrect
-
-Tests correct Page title.
-
-### ConsentBar
-
-Tests that consent bar is shown for new visitor.
-
-### BackgroundHeaderColor
-
-Tests that background color of the big header is as
-specified by checking against color code in style attr.
-
-### HamburgerMenuNotVisible
-
-Tests that hamburger menu for mobile version is not displayed
-
-## CrossPageTests
-
-Test suite for Homepage -> Service cross page tests.
-Parametrized for all supported browsers.
-
-### before
-
-before hook - opens Homepage, accepts cookies and opens Services
-in the same window/tab of the browser.
-This hook runs only once.
-
-### after
-
-after hook - closes the browser.
-This hook runs only once.
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### ConsentBarNotDisplayed
-
-Tests that cookie consent bar will not be displayed
-
-## NetworkHomepageTests
-
-Test suite for network traffict on Homepage.
-Parametrized for all supported browsers.
-
-### before
-
-before hook - starts browser and all that stuff.
-Starts network listener to check, if request to tested
-url returned with HTTP code 200
-
-### after
-
-after hook - closes browser
-
-### afterEach
-
-afterEach hook - saves screenshot, if test fail
-
-### GTMLoadTest
-
-Tests, that Google GTM script, which is responsible for handling the tracking
-datalayer events and send them to GA was successfully loaded.
 
 ## MultiLanguageHomepageTests
 
@@ -350,12 +166,63 @@ specified by checking against color code in style attr.
 
 Tests that hamburger menu for mobile version is not displayed
 
+## NetworkHomepageTests
+
+Test suite for network traffict on Homepage.
+Parametrized for all supported browsers.
+Parametrized for published languages.
+
+### before
+
+before hook - starts browser and all that stuff.
+Starts network listener to check, if request to tested
+url returned with HTTP code 200
+
+### after
+
+after hook - closes browser
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### GTMLoadTest
+
+Tests, that Google GTM script, which is responsible for handling the tracking
+datalayer events and send them to GA was successfully loaded.
+
+## CrossPageTests
+
+Test suite for Homepage -> Service cross page tests.
+Parametrized for all supported browsers.
+Parametrized for published languages.
+
+### before
+
+before hook - opens Homepage, accepts cookies and opens Services
+in the same window/tab of the browser.
+This hook runs only once.
+
+### after
+
+after hook - closes the browser.
+This hook runs only once.
+
+### afterEach
+
+afterEach hook - saves screenshot, if test fail
+
+### ConsentBarNotDisplayed
+
+Tests that cookie consent bar will not be displayed
+
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][67] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][43] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
+Parametrized for published languages.
 
 ### before
 
@@ -377,6 +244,12 @@ Tests that page title of the mobile version of the homepage is correct
 ### hamburgerMenuIsVisible
 
 Tests that hamburger menu on mobile version of page is visible
+
+## before
+
+before hook - opens the browser, context and page
+and goes to page.url
+This hook is run once.
 
 [1]: #homepagecontactformtests
 
@@ -406,108 +279,60 @@ Tests that hamburger menu on mobile version of page is visible
 
 [14]: #before-2
 
-[15]: #before-3
+[15]: #after-2
 
-[16]: #after-2
+[16]: #aftereach-2
 
-[17]: #after-3
+[17]: #pagetitleiscorrect
 
-[18]: #aftereach-2
+[18]: #ctabuttonsvisible
 
-[19]: #aftereach-3
+[19]: #multilanguagehomepagetests
 
-[20]: #pagetitleiscorrect
+[20]: #after-3
 
-[21]: #pagetitleiscorrect-1
+[21]: #aftereach-3
 
-[22]: #ctabuttonsvisible
+[22]: #pagetitleiscorrect-1
 
-[23]: #ctabuttonsvisible-1
+[23]: #consentbar
 
-[24]: #servicespagetests-1
+[24]: #backgroundheadercolor
 
-[25]: #before-4
+[25]: #hamburgermenunotvisible
 
-[26]: #before-5
+[26]: #networkhomepagetests
 
-[27]: #after-4
+[27]: #before-3
 
-[28]: #after-5
+[28]: #after-4
 
 [29]: #aftereach-4
 
-[30]: #aftereach-5
+[30]: #gtmloadtest
 
-[31]: #pagetitleiscorrect-2
+[31]: #crosspagetests
 
-[32]: #pagetitleiscorrect-3
+[32]: #before-4
 
-[33]: #ctabuttonsvisible-2
+[33]: #after-5
 
-[34]: #ctabuttonsvisible-3
+[34]: #aftereach-5
 
-[35]: #homepagetests
+[35]: #consentbarnotdisplayed
 
-[36]: #before-6
+[36]: #mobilehomepagetests
 
-[37]: #before-7
+[37]: #before-5
 
 [38]: #after-6
 
 [39]: #aftereach-6
 
-[40]: #pagetitleiscorrect-4
+[40]: #pagetitleiscorrect-2
 
-[41]: #consentbar
+[41]: #hamburgermenuisvisible
 
-[42]: #backgroundheadercolor
+[42]: #before-6
 
-[43]: #hamburgermenunotvisible
-
-[44]: #crosspagetests
-
-[45]: #before-8
-
-[46]: #after-7
-
-[47]: #aftereach-7
-
-[48]: #consentbarnotdisplayed
-
-[49]: #networkhomepagetests
-
-[50]: #before-9
-
-[51]: #after-8
-
-[52]: #aftereach-8
-
-[53]: #gtmloadtest
-
-[54]: #multilanguagehomepagetests
-
-[55]: #after-9
-
-[56]: #aftereach-9
-
-[57]: #pagetitleiscorrect-5
-
-[58]: #consentbar-1
-
-[59]: #backgroundheadercolor-1
-
-[60]: #hamburgermenunotvisible-1
-
-[61]: #mobilehomepagetests
-
-[62]: #before-10
-
-[63]: #after-10
-
-[64]: #aftereach-10
-
-[65]: #pagetitleiscorrect-6
-
-[66]: #hamburgermenuisvisible
-
-[67]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[43]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169

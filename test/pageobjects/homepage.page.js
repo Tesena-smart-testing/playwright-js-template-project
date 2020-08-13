@@ -24,10 +24,6 @@ class Homepage extends Page {
     /** {object} localization values to allow for parametrized multi culture web testing, e.g. /en and /cs
      */
     this.locale = localeHomepage;
-    /** this page url */
-    this.url = "https://www.tesena.com/en";
-    /** this page title */
-    this.pageTitle = "Home — Tesena";
     /** {object} information about header background */
     this.headerBigBackgroundBar = {
       loc: '//div[contains(@class, "section-background-cover")]',

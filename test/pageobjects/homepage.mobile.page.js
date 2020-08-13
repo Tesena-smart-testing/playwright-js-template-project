@@ -4,6 +4,7 @@
  * @requires module:MobilePage
  */
 
+const { localeHomepage } = require("../helpers/localization");
 const MobilePage = require("../pageobjects/mobile.page");
 
 /**
@@ -18,10 +19,8 @@ class MobileHomepage extends MobilePage {
    */
   constructor() {
     super();
-    /** this page url */
-    this.url = "https://www.tesena.com/en";
-    /** this page title */
-    this.pageTitle = "Home — Tesena";
+    /** localization settings for Homepage page object */
+    this.locale = localeHomepage;
   }
 }
 
