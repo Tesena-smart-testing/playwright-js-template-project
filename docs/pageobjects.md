@@ -3,64 +3,55 @@
 ### Table of Contents
 
 -   [MobileHomepage][1]
-    -   [url][2]
-    -   [pageTitle][3]
-    -   [MobileHomepage][4]
--   [Homepage][5]
-    -   [locale][6]
-    -   [url][7]
-    -   [pageTitle][8]
-    -   [headerBigBackgroundBar][9]
-    -   [contactForm][10]
-    -   [Homepage][11]
--   [Localization][12]
-    -   [localeHomepage][13]
-    -   [localeServices][14]
--   [MobilePage][15]
-    -   [hamburgerMenu][16]
-    -   [MobilePage][17]
--   [Page][18]
-    -   [default][19]
-        -   [browser][20]
-        -   [context][21]
-        -   [page][22]
-        -   [browsers][23]
-        -   [gtmUrl][24]
-        -   [cookieConsentBar][25]
-        -   [launchBrowser][26]
-            -   [Parameters][27]
-        -   [startNewContext][28]
-        -   [openNewPage][29]
-        -   [openPage][30]
+    -   [locale][2]
+    -   [MobileHomepage][3]
+-   [Homepage][4]
+    -   [locale][5]
+    -   [headerBigBackgroundBar][6]
+    -   [contactForm][7]
+    -   [Homepage][8]
+-   [MobilePage][9]
+    -   [hamburgerMenu][10]
+    -   [MobilePage][11]
+-   [Page][12]
+    -   [default][13]
+        -   [browser][14]
+        -   [context][15]
+        -   [page][16]
+        -   [browsers][17]
+        -   [gtmUrl][18]
+        -   [cookieConsentBar][19]
+        -   [launchBrowser][20]
+            -   [Parameters][21]
+        -   [startNewContext][22]
+        -   [openNewPage][23]
+        -   [openPage][24]
+            -   [Parameters][25]
+        -   [closeBrowser][26]
+        -   [closeContext][27]
+        -   [isVisible\_][28]
+            -   [Parameters][29]
+        -   [verifyElementStyleColor][30]
             -   [Parameters][31]
-        -   [closeBrowser][32]
-        -   [closeContext][33]
-        -   [isVisible\_][34]
-            -   [Parameters][35]
-        -   [verifyElementStyleColor][36]
-            -   [Parameters][37]
-        -   [getDatalayer][38]
-        -   [screenshot][39]
-            -   [Parameters][40]
--   [Services][41]
-    -   [locale][42]
-    -   [url][43]
-    -   [pageTitle][44]
-    -   [ctaBttn][45]
-    -   [Services][46]
-        -   [getCtaBttnsElements][47]
+        -   [getDatalayer][32]
+        -   [screenshot][33]
+            -   [Parameters][34]
+-   [Services][35]
+    -   [locale][36]
+    -   [ctaBttn][37]
+    -   [Services][38]
+        -   [getCtaBttnsElements][39]
+-   [Localization][40]
+    -   [localeHomepage][41]
+    -   [localeServices][42]
 
 ## MobileHomepage
 
 MobileHomepage module
 
-### url
+### locale
 
-this page url
-
-### pageTitle
-
-this page title
+localization settings for Homepage page object
 
 ### MobileHomepage
 
@@ -76,14 +67,6 @@ Homepage module.
 
 {object} localization values to allow for parametrized multi culture web testing, e.g. /en and /cs
 
-### url
-
-this page url
-
-### pageTitle
-
-this page title
-
 ### headerBigBackgroundBar
 
 {object} information about header background
@@ -97,18 +80,6 @@ this page title
 **Extends Page**
 
 Class for Homepage
-
-## Localization
-
-Localized data for different culture versions of Page Objects of the tested website.
-
-### localeHomepage
-
-Localization for Homepage Page Object
-
-### localeServices
-
-Localization for Services Page Object
 
 ## MobilePage
 
@@ -169,7 +140,7 @@ Launches browser of given type as Playwright instance.
 
 ##### Parameters
 
--   `browser` **[string][48]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### startNewContext
 
@@ -186,8 +157,8 @@ opens new page and then loads website in that page
 
 ##### Parameters
 
--   `url` **[string][48]** url to open in page
--   `browser` **[string][48]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `url` **[string][43]** url to open in page
+-   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### closeBrowser
 
@@ -205,9 +176,9 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][49]** elementHandle
+-   `elementHandle` **[object][44]** elementHandle
 
-Returns **[boolean][50]** false, if is not visible, else true
+Returns **[boolean][45]** false, if is not visible, else true
 
 #### verifyElementStyleColor
 
@@ -215,17 +186,17 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][49]** elementHandle object returned from page
--   `color` **[string][48]** color code to check, if present in the element style attribute value
+-   `element` **[object][44]** elementHandle object returned from page
+-   `color` **[string][43]** color code to check, if present in the element style attribute value
 
-Returns **[boolean][50]** true, if color code is present, else false
+Returns **[boolean][45]** true, if color code is present, else false
 
 #### getDatalayer
 
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][51]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][46]** datalayer - an array of objects, each object is a tracking event
 
 #### screenshot
 
@@ -233,7 +204,7 @@ Takes screenshot of full page (not just viewport) and saves it.
 
 ##### Parameters
 
--   `filename` **[string][48]** intended filename with extension!
+-   `filename` **[string][43]** intended filename with extension!
 
 ## Services
 
@@ -243,14 +214,6 @@ Services module.
 
 {object} localization values to allow for parametrized multi
  culture web testing, e.g. /en and /cs
-
-### url
-
-this page url
-
-### pageTitle
-
-this page title
 
 ### ctaBttn
 
@@ -266,106 +229,108 @@ Class for Services page
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][51]** element handles of CTA bttns
+Returns **[Array][46]** element handles of CTA bttns
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
 
 [1]: #mobilehomepage
 
-[2]: #url
+[2]: #locale
 
-[3]: #pagetitle
+[3]: #mobilehomepage-1
 
-[4]: #mobilehomepage-1
+[4]: #homepage
 
-[5]: #homepage
+[5]: #locale-1
 
-[6]: #locale
+[6]: #headerbigbackgroundbar
 
-[7]: #url-1
+[7]: #contactform
 
-[8]: #pagetitle-1
+[8]: #homepage-1
 
-[9]: #headerbigbackgroundbar
+[9]: #mobilepage
 
-[10]: #contactform
+[10]: #hamburgermenu
 
-[11]: #homepage-1
+[11]: #mobilepage-1
 
-[12]: #localization
+[12]: #page
 
-[13]: #localehomepage
+[13]: #default
 
-[14]: #localeservices
+[14]: #browser
 
-[15]: #mobilepage
+[15]: #context
 
-[16]: #hamburgermenu
+[16]: #page-1
 
-[17]: #mobilepage-1
+[17]: #browsers
 
-[18]: #page
+[18]: #gtmurl
 
-[19]: #default
+[19]: #cookieconsentbar
 
-[20]: #browser
+[20]: #launchbrowser
 
-[21]: #context
+[21]: #parameters
 
-[22]: #page-1
+[22]: #startnewcontext
 
-[23]: #browsers
+[23]: #opennewpage
 
-[24]: #gtmurl
+[24]: #openpage
 
-[25]: #cookieconsentbar
+[25]: #parameters-1
 
-[26]: #launchbrowser
+[26]: #closebrowser
 
-[27]: #parameters
+[27]: #closecontext
 
-[28]: #startnewcontext
+[28]: #isvisible_
 
-[29]: #opennewpage
+[29]: #parameters-2
 
-[30]: #openpage
+[30]: #verifyelementstylecolor
 
-[31]: #parameters-1
+[31]: #parameters-3
 
-[32]: #closebrowser
+[32]: #getdatalayer
 
-[33]: #closecontext
+[33]: #screenshot
 
-[34]: #isvisible_
+[34]: #parameters-4
 
-[35]: #parameters-2
+[35]: #services
 
-[36]: #verifyelementstylecolor
+[36]: #locale-2
 
-[37]: #parameters-3
+[37]: #ctabttn
 
-[38]: #getdatalayer
+[38]: #services-1
 
-[39]: #screenshot
+[39]: #getctabttnselements
 
-[40]: #parameters-4
+[40]: #localization
 
-[41]: #services
+[41]: #localehomepage
 
-[42]: #locale-1
+[42]: #localeservices
 
-[43]: #url-2
+[43]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[44]: #pagetitle-2
+[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[45]: #ctabttn
+[45]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[46]: #services-1
-
-[47]: #getctabttnselements
-
-[48]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
-[49]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[50]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-
-[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
