@@ -13,7 +13,7 @@ Homepage.browsers.forEach(function (browser) {
        * Test suite for Homepage.
        * Parametrized for all supported browsers.
        * Parametrized for defined localizations - /en and /cs.
-       * @function MultiLanguageHomepageTests
+       * @function HomepageTests
        * @requires module:Homepage
        */
       describe(`${browser}: ${culture}: Homepage tests`, function () {
@@ -32,7 +32,7 @@ Homepage.browsers.forEach(function (browser) {
          * after hook - closes browser.
          * Runs only once.
          * @function
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         after(async function () {
           await Homepage.closeBrowser();
@@ -41,7 +41,7 @@ Homepage.browsers.forEach(function (browser) {
         /**
          * afterEach hook - saves screenshot, if test fail
          * @function
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         afterEach(async function () {
           await Helpers.takeScreenshot(this, Homepage, "failed", browser);
@@ -50,7 +50,7 @@ Homepage.browsers.forEach(function (browser) {
         /**
          * Tests correct Page title.
          * @function PageTitleIsCorrect
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         it(`page title is ${Homepage.locale[culture].pageTitle}`, async function () {
           const title = await Homepage.page.title();
@@ -60,7 +60,7 @@ Homepage.browsers.forEach(function (browser) {
         /**
          * Tests that consent bar is shown for new visitor.
          * @function ConsentBar
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         it("cookie consent bar is shown", async function () {
           const selectorCheck = await Homepage.page.waitForSelector(
@@ -76,7 +76,7 @@ Homepage.browsers.forEach(function (browser) {
          * Tests that background color of the big header is as
          * specified by checking against color code in style attr.
          * @function BackgroundHeaderColor
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         it("header background color is correct", async function () {
           const headerBackgroundElement = await Homepage.page.$(
@@ -93,7 +93,7 @@ Homepage.browsers.forEach(function (browser) {
         /**
          * Tests that hamburger menu for mobile version is not displayed
          * @function HamburgerMenuNotVisible
-         * @memberof MultiLanguageHomepageTests
+         * @memberof HomepageTests
          */
         it("mobile hamburger menu is not visible", async function () {
           const statusCheck = await Homepage.isVisible_(

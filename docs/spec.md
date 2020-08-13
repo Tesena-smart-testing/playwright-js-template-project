@@ -20,30 +20,30 @@
     -   [afterEach][16]
     -   [PageTitleIsCorrect][17]
     -   [CTAButtonsVisible][18]
--   [MultiLanguageHomepageTests][19]
-    -   [after][20]
-    -   [afterEach][21]
-    -   [PageTitleIsCorrect][22]
-    -   [ConsentBar][23]
-    -   [BackgroundHeaderColor][24]
-    -   [HamburgerMenuNotVisible][25]
--   [NetworkHomepageTests][26]
-    -   [before][27]
-    -   [after][28]
-    -   [afterEach][29]
-    -   [GTMLoadTest][30]
--   [CrossPageTests][31]
-    -   [before][32]
-    -   [after][33]
-    -   [afterEach][34]
-    -   [ConsentBarNotDisplayed][35]
--   [MobileHomepageTests][36]
-    -   [before][37]
-    -   [after][38]
-    -   [afterEach][39]
-    -   [pageTitleIsCorrect][40]
-    -   [hamburgerMenuIsVisible][41]
--   [before][42]
+-   [HomepageTests][19]
+    -   [before][20]
+    -   [after][21]
+    -   [afterEach][22]
+    -   [PageTitleIsCorrect][23]
+    -   [ConsentBar][24]
+    -   [BackgroundHeaderColor][25]
+    -   [HamburgerMenuNotVisible][26]
+-   [NetworkHomepageTests][27]
+    -   [before][28]
+    -   [after][29]
+    -   [afterEach][30]
+    -   [GTMLoadTest][31]
+-   [CrossPageTests][32]
+    -   [before][33]
+    -   [after][34]
+    -   [afterEach][35]
+    -   [ConsentBarNotDisplayed][36]
+-   [MobileHomepageTests][37]
+    -   [before][38]
+    -   [after][39]
+    -   [afterEach][40]
+    -   [pageTitleIsCorrect][41]
+    -   [hamburgerMenuIsVisible][42]
 
 ## HomepageContactFormTests
 
@@ -134,11 +134,17 @@ Tests that Page title is correct.
 
 Tests that CTA buttons are visible.
 
-## MultiLanguageHomepageTests
+## HomepageTests
 
 Test suite for Homepage.
 Parametrized for all supported browsers.
 Parametrized for defined localizations - /en and /cs.
+
+### before
+
+before hook - opens the browser, context and page
+and goes to page.url
+This hook is run once.
 
 ### after
 
@@ -245,12 +251,6 @@ Tests that page title of the mobile version of the homepage is correct
 
 Tests that hamburger menu on mobile version of page is visible
 
-## before
-
-before hook - opens the browser, context and page
-and goes to page.url
-This hook is run once.
-
 [1]: #homepagecontactformtests
 
 [2]: #before
@@ -287,52 +287,52 @@ This hook is run once.
 
 [18]: #ctabuttonsvisible
 
-[19]: #multilanguagehomepagetests
+[19]: #homepagetests
 
-[20]: #after-3
+[20]: #before-3
 
-[21]: #aftereach-3
+[21]: #after-3
 
-[22]: #pagetitleiscorrect-1
+[22]: #aftereach-3
 
-[23]: #consentbar
+[23]: #pagetitleiscorrect-1
 
-[24]: #backgroundheadercolor
+[24]: #consentbar
 
-[25]: #hamburgermenunotvisible
+[25]: #backgroundheadercolor
 
-[26]: #networkhomepagetests
+[26]: #hamburgermenunotvisible
 
-[27]: #before-3
+[27]: #networkhomepagetests
 
-[28]: #after-4
+[28]: #before-4
 
-[29]: #aftereach-4
+[29]: #after-4
 
-[30]: #gtmloadtest
+[30]: #aftereach-4
 
-[31]: #crosspagetests
+[31]: #gtmloadtest
 
-[32]: #before-4
+[32]: #crosspagetests
 
-[33]: #after-5
+[33]: #before-5
 
-[34]: #aftereach-5
+[34]: #after-5
 
-[35]: #consentbarnotdisplayed
+[35]: #aftereach-5
 
-[36]: #mobilehomepagetests
+[36]: #consentbarnotdisplayed
 
-[37]: #before-5
+[37]: #mobilehomepagetests
 
-[38]: #after-6
+[38]: #before-6
 
-[39]: #aftereach-6
+[39]: #after-6
 
-[40]: #pagetitleiscorrect-2
+[40]: #aftereach-6
 
-[41]: #hamburgermenuisvisible
+[41]: #pagetitleiscorrect-2
 
-[42]: #before-6
+[42]: #hamburgermenuisvisible
 
 [43]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
