@@ -13,42 +13,42 @@
     -   [headerBigBackgroundBar][9]
     -   [contactForm][10]
     -   [Homepage][11]
--   [MobilePage][12]
-    -   [hamburgerMenu][13]
-    -   [MobilePage][14]
--   [Page][15]
-    -   [default][16]
-        -   [browser][17]
-        -   [context][18]
-        -   [page][19]
-        -   [browsers][20]
-        -   [gtmUrl][21]
-        -   [cookieConsentBar][22]
-        -   [launchBrowser][23]
-            -   [Parameters][24]
-        -   [startNewContext][25]
-        -   [openNewPage][26]
-        -   [openPage][27]
-            -   [Parameters][28]
-        -   [closeBrowser][29]
-        -   [closeContext][30]
-        -   [isVisible\_][31]
-            -   [Parameters][32]
-        -   [verifyElementStyleColor][33]
-            -   [Parameters][34]
-        -   [getDatalayer][35]
-        -   [screenshot][36]
+-   [Localization][12]
+    -   [localeHomepage][13]
+    -   [localeServices][14]
+-   [MobilePage][15]
+    -   [hamburgerMenu][16]
+    -   [MobilePage][17]
+-   [Page][18]
+    -   [default][19]
+        -   [browser][20]
+        -   [context][21]
+        -   [page][22]
+        -   [browsers][23]
+        -   [gtmUrl][24]
+        -   [cookieConsentBar][25]
+        -   [launchBrowser][26]
+            -   [Parameters][27]
+        -   [startNewContext][28]
+        -   [openNewPage][29]
+        -   [openPage][30]
+            -   [Parameters][31]
+        -   [closeBrowser][32]
+        -   [closeContext][33]
+        -   [isVisible\_][34]
+            -   [Parameters][35]
+        -   [verifyElementStyleColor][36]
             -   [Parameters][37]
--   [Services][38]
-    -   [locale][39]
-    -   [url][40]
-    -   [pageTitle][41]
-    -   [ctaBttn][42]
-    -   [Services][43]
-        -   [getCtaBttnsElements][44]
--   [Localization][45]
-    -   [localeHomepage][46]
-    -   [localeServices][47]
+        -   [getDatalayer][38]
+        -   [screenshot][39]
+            -   [Parameters][40]
+-   [Services][41]
+    -   [locale][42]
+    -   [url][43]
+    -   [pageTitle][44]
+    -   [ctaBttn][45]
+    -   [Services][46]
+        -   [getCtaBttnsElements][47]
 
 ## MobileHomepage
 
@@ -97,6 +97,18 @@ this page title
 **Extends Page**
 
 Class for Homepage
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
 
 ## MobilePage
 
@@ -195,7 +207,7 @@ Checks, if element is visible on the page by
 
 -   `elementHandle` **[object][49]** elementHandle
 
-Returns **[boolean][50]** false, if is not visible, else undefined
+Returns **[boolean][50]** false, if is not visible, else true
 
 #### verifyElementStyleColor
 
@@ -256,18 +268,6 @@ returns Array of element handles of CTA bttns
 
 Returns **[Array][51]** element handles of CTA bttns
 
-## Localization
-
-Localized data for different culture versions of Page Objects of the tested website.
-
-### localeHomepage
-
-Localization for Homepage Page Object
-
-### localeServices
-
-Localization for Services Page Object
-
 [1]: #mobilehomepage
 
 [2]: #url
@@ -290,77 +290,77 @@ Localization for Services Page Object
 
 [11]: #homepage-1
 
-[12]: #mobilepage
+[12]: #localization
 
-[13]: #hamburgermenu
+[13]: #localehomepage
 
-[14]: #mobilepage-1
+[14]: #localeservices
 
-[15]: #page
+[15]: #mobilepage
 
-[16]: #default
+[16]: #hamburgermenu
 
-[17]: #browser
+[17]: #mobilepage-1
 
-[18]: #context
+[18]: #page
 
-[19]: #page-1
+[19]: #default
 
-[20]: #browsers
+[20]: #browser
 
-[21]: #gtmurl
+[21]: #context
 
-[22]: #cookieconsentbar
+[22]: #page-1
 
-[23]: #launchbrowser
+[23]: #browsers
 
-[24]: #parameters
+[24]: #gtmurl
 
-[25]: #startnewcontext
+[25]: #cookieconsentbar
 
-[26]: #opennewpage
+[26]: #launchbrowser
 
-[27]: #openpage
+[27]: #parameters
 
-[28]: #parameters-1
+[28]: #startnewcontext
 
-[29]: #closebrowser
+[29]: #opennewpage
 
-[30]: #closecontext
+[30]: #openpage
 
-[31]: #isvisible_
+[31]: #parameters-1
 
-[32]: #parameters-2
+[32]: #closebrowser
 
-[33]: #verifyelementstylecolor
+[33]: #closecontext
 
-[34]: #parameters-3
+[34]: #isvisible_
 
-[35]: #getdatalayer
+[35]: #parameters-2
 
-[36]: #screenshot
+[36]: #verifyelementstylecolor
 
-[37]: #parameters-4
+[37]: #parameters-3
 
-[38]: #services
+[38]: #getdatalayer
 
-[39]: #locale-1
+[39]: #screenshot
 
-[40]: #url-2
+[40]: #parameters-4
 
-[41]: #pagetitle-2
+[41]: #services
 
-[42]: #ctabttn
+[42]: #locale-1
 
-[43]: #services-1
+[43]: #url-2
 
-[44]: #getctabttnselements
+[44]: #pagetitle-2
 
-[45]: #localization
+[45]: #ctabttn
 
-[46]: #localehomepage
+[46]: #services-1
 
-[47]: #localeservices
+[47]: #getctabttnselements
 
 [48]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
