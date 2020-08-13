@@ -28,7 +28,10 @@ class Helpers {
         `${expectedTestStatus}_`.concat(
           browser,
           "_",
-          mochaInstance.currentTest.title,
+          mochaInstance.currentTest
+            .fullTitle()
+            .replace(/:/g, "")
+            .replace(/\s/g, "_"),
           "_",
           Date.now().toString(),
           ".png"

@@ -23,7 +23,7 @@ const devicesNames = Object.keys(devicesToTest);
          * @function MobileHomepageTests
          * @requires module:devicesToTest
          */
-        describe(`${browser}: ${culture}: mobile homepage tests`, function () {
+        describe(`${browser}: ${culture}: ${device}: mobile homepage tests`, function () {
           /**
            * before hook - ensures start browser with context of
            * mobile device we are emulating
@@ -68,7 +68,7 @@ const devicesNames = Object.keys(devicesToTest);
            * @function pageTitleIsCorrect
            * @memberof MobileHomepageTests
            */
-          it(`${device}: page title is ${MobileHomepage.locale[culture].pageTitle}`, async function () {
+          it(`page title is ${MobileHomepage.locale[culture].pageTitle}`, async function () {
             const title = await MobileHomepage.page.title();
             expect(title).equals(MobileHomepage.locale[culture].pageTitle);
           });
@@ -78,7 +78,7 @@ const devicesNames = Object.keys(devicesToTest);
            * @function hamburgerMenuIsVisible
            * @memberof MobileHomepageTests
            */
-          it(`${device}: hamburger menu is visible`, async function () {
+          it("hamburger menu is visible", async function () {
             const statusCheck = MobileHomepage.isVisible_(
               MobileHomepage.hamburgerMenu.loc.menu
             );
