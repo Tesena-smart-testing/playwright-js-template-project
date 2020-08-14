@@ -11,6 +11,7 @@
 -   [Localization][7]
     -   [localeHomepage][8]
     -   [localeServices][9]
+    -   [localeJobOfferDetail][10]
 
 ## Devices
 
@@ -38,10 +39,10 @@ Filename is concat of expected test status, browser type, test title and `Date.n
 
 ##### Parameters
 
--   `mochaInstance` **[object][10]** instance of the mocha test runner, i.e. `this`
--   `pageobject` **[object][10]** instance of the pageobject class, i.e. `Homepage`
--   `expectedTestStatus` **[string][11]** `passed` or `failed`
--   `browser` **[string][11]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
+-   `mochaInstance` **[object][11]** instance of the mocha test runner, i.e. `this`
+-   `pageobject` **[object][11]** instance of the pageobject class, i.e. `Homepage`
+-   `expectedTestStatus` **[string][12]** `passed` or `failed`
+-   `browser` **[string][12]** type of browser we are testing, i.e. 'chromium', 'webkit', 'firefox'
 
 ## Localization
 
@@ -54,6 +55,14 @@ Localization for Homepage Page Object
 ### localeServices
 
 Localization for Services Page Object
+
+### localeJobOfferDetail
+
+localization for JobOfferDetail PageObject
+Contains localizations for 'clones' of the same page, e.g. /senior-test-engineer,
+/test-engineer, etc. Those are same pages, just with different data
+
+Type: [Array][13]
 
 [1]: #devices
 
@@ -73,6 +82,10 @@ Localization for Services Page Object
 
 [9]: #localeservices
 
-[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[10]: #localejobofferdetail
 
-[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

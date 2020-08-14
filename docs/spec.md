@@ -38,12 +38,17 @@
     -   [after][34]
     -   [afterEach][35]
     -   [ConsentBarNotDisplayed][36]
--   [MobileHomepageTests][37]
+-   [JobOfferDetailPageTests][37]
     -   [before][38]
     -   [after][39]
     -   [afterEach][40]
-    -   [pageTitleIsCorrect][41]
-    -   [hamburgerMenuIsVisible][42]
+    -   [FileUploadTest][41]
+-   [MobileHomepageTests][42]
+    -   [before][43]
+    -   [after][44]
+    -   [afterEach][45]
+    -   [pageTitleIsCorrect][46]
+    -   [hamburgerMenuIsVisible][47]
 
 ## HomepageContactFormTests
 
@@ -222,9 +227,37 @@ afterEach hook - saves screenshot, if test fail
 
 Tests that cookie consent bar will not be displayed
 
+## JobOfferDetailPageTests
+
+Test suite for Job Offers - Job Detail page.
+This page is essentialy cloned for several open positions, only difference is in
+data, which are supplied via `jobOfferDetailPage.locale` attribute object.
+Parametrized for all supported browsers.
+Parametrized for all published languages.
+Parametrized for all published page clones.
+
+### before
+
+before hook - opens the page
+This hook runs only once.
+
+### after
+
+after hook - closes the browser
+This hook runs only once.
+
+### afterEach
+
+afterEach hook - saves full page screenshot if test fails
+This hook runs after each test
+
+### FileUploadTest
+
+Tests, that file upload works.
+
 ## MobileHomepageTests
 
--   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][43] - why not Firefox**
+-   **See: [https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169][48] - why not Firefox**
 
 Test suite for mobile version of Homepage.
 Parametrized for chromium and webkit.
@@ -323,7 +356,7 @@ Tests that hamburger menu on mobile version of page is visible
 
 [36]: #consentbarnotdisplayed
 
-[37]: #mobilehomepagetests
+[37]: #jobofferdetailpagetests
 
 [38]: #before-6
 
@@ -331,8 +364,18 @@ Tests that hamburger menu on mobile version of page is visible
 
 [40]: #aftereach-6
 
-[41]: #pagetitleiscorrect-2
+[41]: #fileuploadtest
 
-[42]: #hamburgermenuisvisible
+[42]: #mobilehomepagetests
 
-[43]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169
+[43]: #before-7
+
+[44]: #after-7
+
+[45]: #aftereach-7
+
+[46]: #pagetitleiscorrect-2
+
+[47]: #hamburgermenuisvisible
+
+[48]: https://github.com/microsoft/playwright/issues/2787#issuecomment-652462169

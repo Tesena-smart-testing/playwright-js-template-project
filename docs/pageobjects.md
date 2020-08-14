@@ -10,40 +10,48 @@
     -   [headerBigBackgroundBar][6]
     -   [contactForm][7]
     -   [Homepage][8]
--   [MobilePage][9]
-    -   [hamburgerMenu][10]
-    -   [MobilePage][11]
--   [Page][12]
-    -   [default][13]
-        -   [browser][14]
-        -   [context][15]
-        -   [page][16]
-        -   [browsers][17]
-        -   [gtmUrl][18]
-        -   [cookieConsentBar][19]
-        -   [launchBrowser][20]
-            -   [Parameters][21]
-        -   [startNewContext][22]
-        -   [openNewPage][23]
-        -   [openPage][24]
-            -   [Parameters][25]
-        -   [closeBrowser][26]
-        -   [closeContext][27]
-        -   [isVisible\_][28]
-            -   [Parameters][29]
-        -   [verifyElementStyleColor][30]
-            -   [Parameters][31]
-        -   [getDatalayer][32]
-        -   [screenshot][33]
-            -   [Parameters][34]
--   [Services][35]
-    -   [locale][36]
-    -   [ctaBttn][37]
-    -   [Services][38]
-        -   [getCtaBttnsElements][39]
--   [Localization][40]
-    -   [localeHomepage][41]
-    -   [localeServices][42]
+-   [jobOfferDetail][9]
+    -   [JobOfferDetail][10]
+        -   [uploadCV][11]
+            -   [Parameters][12]
+-   [locale][13]
+-   [fileInput][14]
+-   [uploadedFile][15]
+-   [Localization][16]
+    -   [localeHomepage][17]
+    -   [localeServices][18]
+    -   [localeJobOfferDetail][19]
+-   [MobilePage][20]
+    -   [hamburgerMenu][21]
+    -   [MobilePage][22]
+-   [Page][23]
+    -   [default][24]
+        -   [browser][25]
+        -   [context][26]
+        -   [page][27]
+        -   [browsers][28]
+        -   [gtmUrl][29]
+        -   [cookieConsentBar][30]
+        -   [launchBrowser][31]
+            -   [Parameters][32]
+        -   [startNewContext][33]
+        -   [openNewPage][34]
+        -   [openPage][35]
+            -   [Parameters][36]
+        -   [closeBrowser][37]
+        -   [closeContext][38]
+        -   [isVisible\_][39]
+            -   [Parameters][40]
+        -   [verifyElementStyleColor][41]
+            -   [Parameters][42]
+        -   [getDatalayer][43]
+        -   [screenshot][44]
+            -   [Parameters][45]
+-   [Services][46]
+    -   [locale][47]
+    -   [ctaBttn][48]
+    -   [Services][49]
+        -   [getCtaBttnsElements][50]
 
 ## MobileHomepage
 
@@ -80,6 +88,58 @@ Homepage module.
 **Extends Page**
 
 Class for Homepage
+
+## jobOfferDetail
+
+Job offer detail module
+
+### JobOfferDetail
+
+**Extends Page**
+
+Job Offer Detail Page Object
+
+#### uploadCV
+
+Uploads file.
+
+##### Parameters
+
+-   `filepath` **[string][51]** filepath to the file to be uploaded
+
+Returns **[boolean][52]** true: if notification element is visible, else returns false
+
+## locale
+
+{object} localization for this Page Object
+
+## fileInput
+
+{object} information about file input element
+
+## uploadedFile
+
+{object} information about uploaded file notification element
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
+
+### localeJobOfferDetail
+
+localization for JobOfferDetail PageObject
+Contains localizations for 'clones' of the same page, e.g. /senior-test-engineer,
+/test-engineer, etc. Those are same pages, just with different data
+
+Type: [Array][53]
 
 ## MobilePage
 
@@ -140,7 +200,7 @@ Launches browser of given type as Playwright instance.
 
 ##### Parameters
 
--   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `browser` **[string][51]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### startNewContext
 
@@ -157,8 +217,8 @@ opens new page and then loads website in that page
 
 ##### Parameters
 
--   `url` **[string][43]** url to open in page
--   `browser` **[string][43]** supported browser type, e.g. "chromium", "firefox", "webkit"
+-   `url` **[string][51]** url to open in page
+-   `browser` **[string][51]** supported browser type, e.g. "chromium", "firefox", "webkit"
 
 #### closeBrowser
 
@@ -176,9 +236,9 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][44]** elementHandle
+-   `elementHandle` **[object][54]** elementHandle
 
-Returns **[boolean][45]** false, if is not visible, else true
+Returns **[boolean][52]** false, if is not visible, else true
 
 #### verifyElementStyleColor
 
@@ -186,17 +246,17 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][44]** elementHandle object returned from page
--   `color` **[string][43]** color code to check, if present in the element style attribute value
+-   `element` **[object][54]** elementHandle object returned from page
+-   `color` **[string][51]** color code to check, if present in the element style attribute value
 
-Returns **[boolean][45]** true, if color code is present, else false
+Returns **[boolean][52]** true, if color code is present, else false
 
 #### getDatalayer
 
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][46]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][53]** datalayer - an array of objects, each object is a tracking event
 
 #### screenshot
 
@@ -204,7 +264,7 @@ Takes screenshot of full page (not just viewport) and saves it.
 
 ##### Parameters
 
--   `filename` **[string][43]** intended filename with extension!
+-   `filename` **[string][51]** intended filename with extension!
 
 ## Services
 
@@ -229,19 +289,7 @@ Class for Services page
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][46]** element handles of CTA bttns
-
-## Localization
-
-Localized data for different culture versions of Page Objects of the tested website.
-
-### localeHomepage
-
-Localization for Homepage Page Object
-
-### localeServices
-
-Localization for Services Page Object
+Returns **[Array][53]** element handles of CTA bttns
 
 [1]: #mobilehomepage
 
@@ -259,78 +307,94 @@ Localization for Services Page Object
 
 [8]: #homepage-1
 
-[9]: #mobilepage
+[9]: #jobofferdetail
 
-[10]: #hamburgermenu
+[10]: #jobofferdetail-1
 
-[11]: #mobilepage-1
+[11]: #uploadcv
 
-[12]: #page
+[12]: #parameters
 
-[13]: #default
+[13]: #locale-2
 
-[14]: #browser
+[14]: #fileinput
 
-[15]: #context
+[15]: #uploadedfile
 
-[16]: #page-1
+[16]: #localization
 
-[17]: #browsers
+[17]: #localehomepage
 
-[18]: #gtmurl
+[18]: #localeservices
 
-[19]: #cookieconsentbar
+[19]: #localejobofferdetail
 
-[20]: #launchbrowser
+[20]: #mobilepage
 
-[21]: #parameters
+[21]: #hamburgermenu
 
-[22]: #startnewcontext
+[22]: #mobilepage-1
 
-[23]: #opennewpage
+[23]: #page
 
-[24]: #openpage
+[24]: #default
 
-[25]: #parameters-1
+[25]: #browser
 
-[26]: #closebrowser
+[26]: #context
 
-[27]: #closecontext
+[27]: #page-1
 
-[28]: #isvisible_
+[28]: #browsers
 
-[29]: #parameters-2
+[29]: #gtmurl
 
-[30]: #verifyelementstylecolor
+[30]: #cookieconsentbar
 
-[31]: #parameters-3
+[31]: #launchbrowser
 
-[32]: #getdatalayer
+[32]: #parameters-1
 
-[33]: #screenshot
+[33]: #startnewcontext
 
-[34]: #parameters-4
+[34]: #opennewpage
 
-[35]: #services
+[35]: #openpage
 
-[36]: #locale-2
+[36]: #parameters-2
 
-[37]: #ctabttn
+[37]: #closebrowser
 
-[38]: #services-1
+[38]: #closecontext
 
-[39]: #getctabttnselements
+[39]: #isvisible_
 
-[40]: #localization
+[40]: #parameters-3
 
-[41]: #localehomepage
+[41]: #verifyelementstylecolor
 
-[42]: #localeservices
+[42]: #parameters-4
 
-[43]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[43]: #getdatalayer
 
-[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[44]: #screenshot
 
-[45]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[45]: #parameters-5
 
-[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[46]: #services
+
+[47]: #locale-3
+
+[48]: #ctabttn
+
+[49]: #services-1
+
+[50]: #getctabttnselements
+
+[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[52]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[53]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[54]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
