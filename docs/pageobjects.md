@@ -10,48 +10,48 @@
     -   [headerBigBackgroundBar][6]
     -   [contactForm][7]
     -   [Homepage][8]
--   [jobOfferDetail][9]
-    -   [JobOfferDetail][10]
-        -   [uploadCV][11]
-            -   [Parameters][12]
--   [locale][13]
--   [fileInput][14]
--   [uploadedFile][15]
--   [Localization][16]
-    -   [localeHomepage][17]
-    -   [localeServices][18]
-    -   [localeJobOfferDetail][19]
--   [MobilePage][20]
-    -   [hamburgerMenu][21]
-    -   [MobilePage][22]
--   [Page][23]
-    -   [default][24]
-        -   [browser][25]
-        -   [context][26]
-        -   [page][27]
-        -   [browsers][28]
-        -   [gtmUrl][29]
-        -   [cookieConsentBar][30]
-        -   [launchBrowser][31]
+-   [JobOfferDetail][9]
+    -   [locale][10]
+    -   [fileInput][11]
+    -   [uploadedFile][12]
+    -   [JobOfferDetail][13]
+        -   [uploadCV][14]
+            -   [Parameters][15]
+-   [MobilePage][16]
+    -   [hamburgerMenu][17]
+    -   [MobilePage][18]
+-   [Page][19]
+    -   [default][20]
+        -   [browser][21]
+        -   [context][22]
+        -   [page][23]
+        -   [browsers][24]
+        -   [gtmUrl][25]
+        -   [cookieConsentBar][26]
+        -   [launchBrowser][27]
+            -   [Parameters][28]
+        -   [startNewContext][29]
+        -   [openNewPage][30]
+        -   [openPage][31]
             -   [Parameters][32]
-        -   [startNewContext][33]
-        -   [openNewPage][34]
-        -   [openPage][35]
+        -   [closeBrowser][33]
+        -   [closeContext][34]
+        -   [isVisible\_][35]
             -   [Parameters][36]
-        -   [closeBrowser][37]
-        -   [closeContext][38]
-        -   [isVisible\_][39]
-            -   [Parameters][40]
-        -   [verifyElementStyleColor][41]
-            -   [Parameters][42]
-        -   [getDatalayer][43]
-        -   [screenshot][44]
-            -   [Parameters][45]
--   [Services][46]
-    -   [locale][47]
-    -   [ctaBttn][48]
-    -   [Services][49]
-        -   [getCtaBttnsElements][50]
+        -   [verifyElementStyleColor][37]
+            -   [Parameters][38]
+        -   [getDatalayer][39]
+        -   [screenshot][40]
+            -   [Parameters][41]
+-   [Services][42]
+    -   [locale][43]
+    -   [ctaBttn][44]
+    -   [Services][45]
+        -   [getCtaBttnsElements][46]
+-   [Localization][47]
+    -   [localeHomepage][48]
+    -   [localeServices][49]
+    -   [localeJobOfferDetail][50]
 
 ## MobileHomepage
 
@@ -89,9 +89,21 @@ Homepage module.
 
 Class for Homepage
 
-## jobOfferDetail
+## JobOfferDetail
 
 Job offer detail module
+
+### locale
+
+{object} localization for this Page Object
+
+### fileInput
+
+{object} information about file input element
+
+### uploadedFile
+
+{object} information about uploaded file notification element
 
 ### JobOfferDetail
 
@@ -108,38 +120,6 @@ Uploads file.
 -   `filepath` **[string][51]** filepath to the file to be uploaded
 
 Returns **[boolean][52]** true: if notification element is visible, else returns false
-
-## locale
-
-{object} localization for this Page Object
-
-## fileInput
-
-{object} information about file input element
-
-## uploadedFile
-
-{object} information about uploaded file notification element
-
-## Localization
-
-Localized data for different culture versions of Page Objects of the tested website.
-
-### localeHomepage
-
-Localization for Homepage Page Object
-
-### localeServices
-
-Localization for Services Page Object
-
-### localeJobOfferDetail
-
-localization for JobOfferDetail PageObject
-Contains localizations for 'clones' of the same page, e.g. /senior-test-engineer,
-/test-engineer, etc. Those are same pages, just with different data
-
-Type: [Array][53]
 
 ## MobilePage
 
@@ -236,7 +216,7 @@ Checks, if element is visible on the page by
 
 ##### Parameters
 
--   `elementHandle` **[object][54]** elementHandle
+-   `elementHandle` **[object][53]** elementHandle
 
 Returns **[boolean][52]** false, if is not visible, else true
 
@@ -246,7 +226,7 @@ Checks, whether element specified style color is present in the element style at
 
 ##### Parameters
 
--   `element` **[object][54]** elementHandle object returned from page
+-   `element` **[object][53]** elementHandle object returned from page
 -   `color` **[string][51]** color code to check, if present in the element style attribute value
 
 Returns **[boolean][52]** true, if color code is present, else false
@@ -256,7 +236,7 @@ Returns **[boolean][52]** true, if color code is present, else false
 Get dataLayer array object from page context. Basically runs javascript code in the browser
 and result (if any) is passed back to node runtime.
 
-Returns **[Array][53]** datalayer - an array of objects, each object is a tracking event
+Returns **[Array][54]** datalayer - an array of objects, each object is a tracking event
 
 #### screenshot
 
@@ -289,7 +269,27 @@ Class for Services page
 
 returns Array of element handles of CTA bttns
 
-Returns **[Array][53]** element handles of CTA bttns
+Returns **[Array][54]** element handles of CTA bttns
+
+## Localization
+
+Localized data for different culture versions of Page Objects of the tested website.
+
+### localeHomepage
+
+Localization for Homepage Page Object
+
+### localeServices
+
+Localization for Services Page Object
+
+### localeJobOfferDetail
+
+localization for JobOfferDetail PageObject
+Contains localizations for 'clones' of the same page, e.g. /senior-test-engineer,
+/test-engineer, etc. Those are same pages, just with different data
+
+Type: [Array][54]
 
 [1]: #mobilehomepage
 
@@ -309,92 +309,92 @@ Returns **[Array][53]** element handles of CTA bttns
 
 [9]: #jobofferdetail
 
-[10]: #jobofferdetail-1
+[10]: #locale-2
 
-[11]: #uploadcv
+[11]: #fileinput
 
-[12]: #parameters
+[12]: #uploadedfile
 
-[13]: #locale-2
+[13]: #jobofferdetail-1
 
-[14]: #fileinput
+[14]: #uploadcv
 
-[15]: #uploadedfile
+[15]: #parameters
 
-[16]: #localization
+[16]: #mobilepage
 
-[17]: #localehomepage
+[17]: #hamburgermenu
 
-[18]: #localeservices
+[18]: #mobilepage-1
 
-[19]: #localejobofferdetail
+[19]: #page
 
-[20]: #mobilepage
+[20]: #default
 
-[21]: #hamburgermenu
+[21]: #browser
 
-[22]: #mobilepage-1
+[22]: #context
 
-[23]: #page
+[23]: #page-1
 
-[24]: #default
+[24]: #browsers
 
-[25]: #browser
+[25]: #gtmurl
 
-[26]: #context
+[26]: #cookieconsentbar
 
-[27]: #page-1
+[27]: #launchbrowser
 
-[28]: #browsers
+[28]: #parameters-1
 
-[29]: #gtmurl
+[29]: #startnewcontext
 
-[30]: #cookieconsentbar
+[30]: #opennewpage
 
-[31]: #launchbrowser
+[31]: #openpage
 
-[32]: #parameters-1
+[32]: #parameters-2
 
-[33]: #startnewcontext
+[33]: #closebrowser
 
-[34]: #opennewpage
+[34]: #closecontext
 
-[35]: #openpage
+[35]: #isvisible_
 
-[36]: #parameters-2
+[36]: #parameters-3
 
-[37]: #closebrowser
+[37]: #verifyelementstylecolor
 
-[38]: #closecontext
+[38]: #parameters-4
 
-[39]: #isvisible_
+[39]: #getdatalayer
 
-[40]: #parameters-3
+[40]: #screenshot
 
-[41]: #verifyelementstylecolor
+[41]: #parameters-5
 
-[42]: #parameters-4
+[42]: #services
 
-[43]: #getdatalayer
+[43]: #locale-3
 
-[44]: #screenshot
+[44]: #ctabttn
 
-[45]: #parameters-5
+[45]: #services-1
 
-[46]: #services
+[46]: #getctabttnselements
 
-[47]: #locale-3
+[47]: #localization
 
-[48]: #ctabttn
+[48]: #localehomepage
 
-[49]: #services-1
+[49]: #localeservices
 
-[50]: #getctabttnselements
+[50]: #localejobofferdetail
 
 [51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
 [52]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[53]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[53]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[54]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[54]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

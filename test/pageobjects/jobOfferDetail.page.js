@@ -1,7 +1,7 @@
 /**
  * Job offer detail module
- * @module jobOfferDetail
- * @requires module:Page
+ * @module JobOfferDetail
+ * @requires module:Page.default
  * @requires module:Localization.localeJobOfferDetail
  */
 
@@ -11,7 +11,8 @@ const { localeJobOfferDetail } = require("../helpers/localization");
 /**
  * Job Offer Detail Page Object
  * @class
- * @memberof jobOfferDetail
+ * @memberof JobOfferDetail
+ * @extends Page
  */
 class JobOfferDetail extends Page {
   /**
