@@ -39,4 +39,35 @@ const localeServices = {
   },
 };
 
-module.exports = { localeHomepage, localeServices };
+/**
+ * localization for JobOfferDetail PageObject
+ * Contains localizations for 'clones' of the same page, e.g. /senior-test-engineer,
+ * /test-engineer, etc. Those are same pages, just with different data
+ * @type {Array}
+ * @constant
+ * @memberof Localization
+ */
+const localeJobOfferDetail = [
+  {
+    en: {
+      published: true,
+      url: "https://www.tesena.com/en/test-engineer",
+    },
+    cs: {
+      published: true,
+      url: "https://www.tesena.com/test-engineer",
+    },
+  },
+  {
+    en: {
+      published: true,
+      url: "https://www.tesena.com/en/senior-test-engineer",
+    },
+    cs: {
+      published: true,
+      url: "https://www.tesena.com/senior-test-engineer",
+    },
+  },
+];
+
+module.exports = { localeHomepage, localeServices, localeJobOfferDetail };

@@ -75,7 +75,7 @@ If some arguments are always passed, put them into `.mocharc.json` file in the r
 ./node_modules/.bin/mocha test/spec/** --config .mocharc.json
 ```
 
-To further shorten the work, create npm skripts, e.g `npm test` in package.json file and run:
+To further shorten the work, you can use predefined `npm test` script in package.json file and run all tests by:
 
 ```
 npm test

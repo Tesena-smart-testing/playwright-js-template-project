@@ -31,7 +31,9 @@ class Helpers {
           mochaInstance.currentTest
             .fullTitle()
             .replace(/:/g, "")
-            .replace(/\s/g, "_"),
+            .replace(/\s/g, "_")
+            .replace(/\//g, "")
+            .replace(/\./g, ""),
           "_",
           Date.now().toString(),
           ".png"
