@@ -93,6 +93,12 @@ AFAIK, Mochawesome author is aware of this issue, and [investigates how to fix t
 
 **If you want to use Mochawesome or Allure, do not run test specs in parallel, but sequentially - disable this option in `.mocharc.json`**.
 
+#### Report Portal
+
+Reporting to ReportPortal was added. Since this is paid feature, files with API info are not pushed in this repo.
+
+To connect to ReportPortal, you can use [agent for Mochajs](https://github.com/reportportal/agent-js-mocha).
+
 #### Screenshots
 
 Currently there is a method implemented, which saves full page screenshot, if test fail. Since we are reporting only to the console now, we are just storing the screenshots to `./screenshots` directory.
