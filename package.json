@@ -7,7 +7,8 @@
     "test": "mocha test\\spec\\** --config .mocharc.json",
     "docs-pop": "documentation build test\\pageobjects\\** -f md -o docs\\pageobjects.md",
     "docs-spec": "documentation build test\\spec\\** -f md -o docs\\spec.md --shallow",
-    "docs-helpers": "documentation build test\\helpers\\** -f md -o docs\\helpers.md"
+    "docs-helpers": "documentation build test\\helpers\\** -f md -o docs\\helpers.md",
+    "mocha-all": "node test\\helpers\\mochaRunner.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "author": "Radek 'bednaJedna' Bednarik | Tesena",
   "license": "MIT",
   "devDependencies": {
+    "@reportportal/agent-js-mocha": "^5.0.1",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "documentation": "^13.0.2",
