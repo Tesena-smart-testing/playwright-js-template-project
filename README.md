@@ -95,9 +95,11 @@ AFAIK, Mochawesome author is aware of this issue, and [investigates how to fix t
 
 #### Report Portal
 
-Reporting to ReportPortal was added. Since this is paid feature, files with API info are not pushed in this repo.
+Reporting to ReportPortal was added. Since this is paid service, files with API credentials are not pushed in this repo.
 
 To connect to ReportPortal, you can use [agent for Mochajs](https://github.com/reportportal/agent-js-mocha).
+
+You have to start Mochajs programatically - so we created [runner file](test\runners\mochaRunner.js), which is then executed by `npm script`. You can of course play with this and by parametrization do the adjusting for your real world needs.
 
 #### Screenshots
 

@@ -8,7 +8,7 @@
     "docs-pop": "documentation build test\\pageobjects\\** -f md -o docs\\pageobjects.md",
     "docs-spec": "documentation build test\\spec\\** -f md -o docs\\spec.md --shallow",
     "docs-helpers": "documentation build test\\helpers\\** -f md -o docs\\helpers.md",
-    "mocha-all": "node test\\helpers\\mochaRunner.js"
+    "mochaRunner-all": "node test\\runners\\mochaRunner.js"
   },
   "repository": {
     "type": "git",
