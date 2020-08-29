@@ -1,7 +1,7 @@
 const Page = require("../pageobjects/homepage.page");
 const Services = require("../pageobjects/services.page");
-const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
+const Reporter = require("../helpers/reporter");
 
 const cultures = Object.keys(Page.locale);
 
@@ -50,7 +50,11 @@ Page.browsers.forEach(function (browser) {
          * @memberof CrossPageTests
          */
         afterEach(async function () {
-          await Helpers.takeScreenshot(this, Page, "failed", browser);
+          await Reporter.logScreenshotWhenTestStatus(
+            "failed",
+            this,
+            Page.page
+          );
         });
 
         /**

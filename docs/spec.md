@@ -99,7 +99,7 @@ This hooks runs only once.
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### after
 
@@ -129,7 +129,7 @@ This hook runs only once.
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### PageTitleIsCorrect
 
@@ -158,7 +158,7 @@ Runs only once.
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### PageTitleIsCorrect
 
@@ -195,7 +195,7 @@ after hook - closes browser
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### GTMLoadTest
 
@@ -221,7 +221,7 @@ This hook runs only once.
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### ConsentBarNotDisplayed
 
@@ -248,7 +248,7 @@ This hook runs only once.
 
 ### afterEach
 
-afterEach hook - saves full page screenshot if test fails
+afterEach hook - saves full page takeScreenshot if test fails
 This hook runs after each test
 
 ### FileUploadTest
@@ -274,7 +274,7 @@ after hook - closes browser
 
 ### afterEach
 
-afterEach hook - saves screenshot, if test fail
+afterEach hook - saves takeScreenshot, if test fail
 
 ### pageTitleIsCorrect
 

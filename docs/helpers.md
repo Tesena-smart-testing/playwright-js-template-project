@@ -6,7 +6,7 @@
     -   [devicesToTest][2]
 -   [Helpers][3]
     -   [Helpers][4]
-        -   [takeScreenshot][5]
+        -   [taketakeScreenshot][5]
             -   [Parameters][6]
 -   [Localization][7]
     -   [localeHomepage][8]
@@ -30,10 +30,10 @@ Provides methods to be used across the project.
 
 Class Helpers.
 
-#### takeScreenshot
+#### taketakeScreenshot
 
-Takes .png screenshot of full page of `pageobject.page` instance and saves it
-to `process.cwd() + screenshots` directory.
+Takes .png takeScreenshot of full page of `pageobject.page` instance and saves it
+to `process.cwd() + takeScreenshots` directory.
 
 Filename is concat of expected test status, browser type, test title and `Date.now()`.
 
@@ -72,7 +72,7 @@ Type: [Array][13]
 
 [4]: #helpers-1
 
-[5]: #takescreenshot
+[5]: #taketakeScreenshot
 
 [6]: #parameters
 

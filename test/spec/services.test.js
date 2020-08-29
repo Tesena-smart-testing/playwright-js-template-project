@@ -1,6 +1,6 @@
 const Services = require("../pageobjects/services.page");
-const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
+const Reporter = require("../helpers/reporter");
 
 const cultures = Object.keys(Services.locale);
 
@@ -42,7 +42,11 @@ Services.browsers.forEach(function (browser) {
          * @memberof ServicesPageTests
          */
         afterEach(async function () {
-          await Helpers.takeScreenshot(this, Services, "failed", browser);
+          await Reporter.logScreenshotWhenTestStatus(
+            "failed",
+            this,
+            Services.page
+          );
         });
 
         /**

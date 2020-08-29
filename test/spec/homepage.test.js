@@ -1,7 +1,7 @@
 const Homepage = require("../pageobjects/homepage.page");
 const MobileHomepage = require("../pageobjects/homepage.mobile.page");
-const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
+const Reporter = require("../helpers/reporter");
 
 const cultures = Object.keys(Homepage.locale);
 
@@ -44,7 +44,11 @@ Homepage.browsers.forEach(function (browser) {
          * @memberof HomepageTests
          */
         afterEach(async function () {
-          await Helpers.takeScreenshot(this, Homepage, "failed", browser);
+          await Reporter.logScreenshotWhenTestStatus(
+            "failed",
+            this,
+            Homepage.page
+          );
         });
 
         /**

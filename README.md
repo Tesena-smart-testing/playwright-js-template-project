@@ -101,8 +101,8 @@ To connect to ReportPortal, you can use [agent for Mochajs](https://github.com/r
 
 You have to start Mochajs programatically - so we created [runner file](test\runners\mochaRunner.js), which is then executed by `npm script`. You can of course play with this and by parametrization do the adjusting for your real world needs.
 
-#### Screenshots
+#### takeScreenshots
 
-Currently there is a method implemented, which saves full page screenshot, if test fail. Since we are reporting only to the console now, we are just storing the screenshots to `./screenshots` directory.
+Currently there is a method implemented, which saves full page takeScreenshot, if test fail. Since we are reporting only to the console now, we are just storing the takeScreenshots to `./takeScreenshots` directory.
 
 You can see, how that works, since one test from spec `homepage.test.js` is set to fail.

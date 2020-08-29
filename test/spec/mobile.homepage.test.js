@@ -1,7 +1,7 @@
 const MobileHomepage = require("../pageobjects/homepage.mobile.page");
-const Helpers = require("../helpers/helpers");
 const devicesToTest = require("../helpers/devices");
 const expect = require("chai").expect;
+const Reporter = require("../helpers/reporter");
 
 const cultures = Object.keys(MobileHomepage.locale);
 const devicesNames = Object.keys(devicesToTest);
@@ -55,11 +55,10 @@ const devicesNames = Object.keys(devicesToTest);
            * @memberof MobileHomepageTests
            */
           afterEach(async function () {
-            await Helpers.takeScreenshot(
-              this,
-              MobileHomepage,
+            await Reporter.logScreenshotWhenTestStatus(
               "failed",
-              browser
+              this,
+              MobileHomepage.page
             );
           });
 

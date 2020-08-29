@@ -41,7 +41,7 @@
         -   [verifyElementStyleColor][37]
             -   [Parameters][38]
         -   [getDatalayer][39]
-        -   [screenshot][40]
+        -   [takeScreenshot][40]
             -   [Parameters][41]
 -   [Services][42]
     -   [locale][43]
@@ -238,9 +238,9 @@ and result (if any) is passed back to node runtime.
 
 Returns **[Array][54]** datalayer - an array of objects, each object is a tracking event
 
-#### screenshot
+#### takeScreenshot
 
-Takes screenshot of full page (not just viewport) and saves it.
+Takes takeScreenshot of full page (not just viewport) and saves it.
 
 ##### Parameters
 
@@ -369,7 +369,7 @@ Type: [Array][54]
 
 [39]: #getdatalayer
 
-[40]: #screenshot
+[40]: #takeScreenshot
 
 [41]: #parameters-5
 

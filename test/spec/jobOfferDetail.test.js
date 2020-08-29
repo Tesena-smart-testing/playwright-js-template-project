@@ -1,7 +1,7 @@
 const jobOfferDetailPage = require("../pageobjects/jobOfferDetail.page");
-const Helpers = require("../helpers/helpers");
 const expect = require("chai").expect;
 const path = require("path");
+const Reporter = require("../helpers/reporter");
 
 jobOfferDetailPage.browsers.forEach(function (browser) {
   // run for all possible clones of the page
@@ -51,11 +51,10 @@ jobOfferDetailPage.browsers.forEach(function (browser) {
            * @memberof JobOfferDetailPageTests
            */
           afterEach(async function () {
-            await Helpers.takeScreenshot(
-              this,
-              jobOfferDetailPage,
+            await Reporter.logScreenshotWhenTestStatus(
               "failed",
-              browser
+              this,
+              jobOfferDetailPage.page
             );
           });
 
