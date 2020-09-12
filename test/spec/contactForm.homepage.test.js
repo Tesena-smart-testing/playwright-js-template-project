@@ -43,7 +43,6 @@ Homepage.browsers.forEach(function (browser) {
          * @function
          * @memberof HomepageContactFormTests
          */
-
         beforeEach(async function () {
           await Homepage.startNewContext();
           await Homepage.openNewPage();
