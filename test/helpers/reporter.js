@@ -32,9 +32,9 @@ class Reporter {
 
       //   console.log(screenshotBuffer);
 
-      console.log(
-        JSON.stringify(this._createScreenshotObject(screenshotBuffer))
-      );
+      // console.log(
+      //   JSON.stringify(this._createScreenshotObject(screenshotBuffer))
+      // );
 
       switch (expectedTestStatus) {
         case "failed":
