@@ -8,6 +8,7 @@
 const Playwright = require("playwright");
 const path = require("path");
 const fs = require("fs");
+const Helpers = require("../helpers/helpers");
 
 /**
  * Export of class Page as default to be extended by other
@@ -29,7 +30,8 @@ module.exports.default = class Page {
   /** playwright context page */
   page;
   /** browsers supporter by playwright */
-  browsers = ["chromium", "firefox", "webkit"];
+  // browsers = ["chromium", "firefox", "webkit"];
+  browsers = Helpers.checkBrowsers();
   /** GTM url of Tesena site */
   gtmUrl = "https://www.googletagmanager.com/gtm.js?id=GTM-KDG2FB9";
   /** {object} information about cookie consent bar */

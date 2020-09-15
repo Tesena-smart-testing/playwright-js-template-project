@@ -30,6 +30,7 @@
     "eslint": "^7.8.1",
     "mocha": "^8.1.3",
     "mochawesome": "^6.1.1",
-    "playwright": "^1.4.0"
+    "playwright": "^1.4.0",
+    "yargs": "^16.0.3"
   }
 }

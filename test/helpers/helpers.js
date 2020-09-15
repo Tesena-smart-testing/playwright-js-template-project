@@ -4,6 +4,8 @@
  * @module Helpers
  */
 
+const argv = require("yargs").argv;
+
 /**
  * Class Helpers.
  * @class
@@ -40,6 +42,21 @@ class Helpers {
         )
       );
     }
+  }
+
+  checkBrowsers() {
+    const b = process.env.CLIENT;
+    console.log(b);
+
+    if (Array.isArray(b)) {
+      return b;
+    }
+
+    if (typeof b === "string") {
+      return [b];
+    }
+
+    return ["chromium", "firefox", "webkit"];
   }
 }
 module.exports = new Helpers();
