@@ -4,8 +4,6 @@
  * @module Helpers
  */
 
-const argv = require("yargs").argv;
-
 /**
  * Class Helpers.
  * @class
@@ -44,9 +42,16 @@ class Helpers {
     }
   }
 
+  /**
+   * Checks, what browsers to test against custom ENV parameters added in npm script in console.
+   * @returns {string} browser name to be tested. Should be "chromium", "firefox", "webkit"
+   * @example npm browser=chromium test
+   * @see https://stackoverflow.com/a/34958058/14155754
+   */
   checkBrowsers() {
-    const b = process.env.CLIENT;
-    console.log(b);
+    // this is a f**** dirty trick!!!
+    // see: https://stackoverflow.com/a/34958058/14155754
+    const b = process.env.npm_config_browser;
 
     if (Array.isArray(b)) {
       return b;

@@ -30,7 +30,6 @@ module.exports.default = class Page {
   /** playwright context page */
   page;
   /** browsers supporter by playwright */
-  // browsers = ["chromium", "firefox", "webkit"];
   browsers = Helpers.checkBrowsers();
   /** GTM url of Tesena site */
   gtmUrl = "https://www.googletagmanager.com/gtm.js?id=GTM-KDG2FB9";
