@@ -3,7 +3,9 @@
  * Provides methods to be used across the project.
  * @module Helpers
  */
-
+const argv = require("yargs")
+  .env("npm_config")
+  .option("browser", { type: "array" }).argv;
 /**
  * Class Helpers.
  * @class
@@ -51,14 +53,11 @@ class Helpers {
   checkBrowsers() {
     // this is a f**** dirty trick!!!
     // see: https://stackoverflow.com/a/34958058/14155754
-    const b = process.env.npm_config_browser;
+    // const b = process.env.npm_config_browser;
+    const b = argv.browser;
 
-    if (Array.isArray(b)) {
+    if (Array.isArray(b) && b[0] !== "") {
       return b;
-    }
-
-    if (typeof b === "string") {
-      return [b];
     }
 
     return ["chromium", "firefox", "webkit"];
