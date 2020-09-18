@@ -46,8 +46,9 @@ class Helpers {
 
   /**
    * Checks, what browsers to test against custom ENV parameters added in npm script in console.
-   * @returns {string} browser name to be tested. Should be "chromium", "firefox", "webkit"
-   * @example npm browser=chromium test
+   * @returns {Array<string>} browser name to be tested. Should be "chromium", "firefox", "webkit"
+   * @example npm --browser=chromium test.
+   * @example If --browser is not provided (i.e only "npm test" is run, returns {Array<string>} with all three browsers names)
    * @see https://stackoverflow.com/a/34958058/14155754
    */
   checkBrowsers() {
