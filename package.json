@@ -26,11 +26,10 @@
     "@reportportal/agent-js-mocha": "^5.0.1",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "documentation": "^13.0.2",
-    "eslint": "^7.8.1",
-    "mocha": "^8.1.3",
-    "mochawesome": "^6.1.1",
-    "playwright": "^1.4.0",
-    "yargs": "^16.0.3"
+    "eslint": "^7.15.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "playwright": "^1.6.2",
+    "yargs": "^16.2.0"
   }
 }
