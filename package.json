@@ -25,11 +25,11 @@
   "devDependencies": {
     "@reportportal/agent-js-mocha": "^5.0.1",
     "babel-eslint": "^10.1.0",
-    "chai": "^4.2.0",
-    "eslint": "^7.15.0",
-    "mocha": "^8.2.1",
-    "mochawesome": "^6.2.1",
-    "playwright": "^1.6.2",
+    "chai": "^4.3.4",
+    "eslint": "^7.27.0",
+    "mocha": "^8.4.0",
+    "mochawesome": "^6.2.2",
+    "playwright": "^1.11.1",
     "yargs": "^16.2.0"
   }
 }
